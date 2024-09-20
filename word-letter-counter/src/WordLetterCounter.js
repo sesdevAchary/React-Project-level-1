@@ -1,12 +1,13 @@
-import React from 'react'
+import React , { useState } from 'react'
+
 
 function WordLetterCounter(){
-    const [text,setText]= useState("")
-
-    wordCount=text.split(/\s+/).filter(Boolean).length; 
-
-    
-    letterCount=text.length
+    const [text, setText] = 
+        useState(""); 
+     wordCount = text 
+        .split(/\s+/) 
+        .filter(Boolean).length; 
+     letterCount = text.length; 
 
     const handleTextChange = (e)=>{
         setText(e.target.value)
@@ -25,13 +26,14 @@ function WordLetterCounter(){
             
             
             />
-            <p>
-                Word count = {wordCount}
-            </p>
-            <p>
-                Letter count = {letterCount}
-            </p>
-            
+           <p> 
+                Word Count: 
+                {wordCount} 
+            </p> 
+            <p> 
+                Letter Count:{" "} 
+                {letterCount} 
+            </p> 
              </div>
     )
 }
