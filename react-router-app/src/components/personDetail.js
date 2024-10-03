@@ -4,7 +4,7 @@ const personDetail=()=>{
     return (
         <div>
             <h2>
-                TO add details about perso </h2></div>
+                TO add details about person </h2></div>
     )
 }
 
