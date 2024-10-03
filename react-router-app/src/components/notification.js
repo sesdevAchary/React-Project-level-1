@@ -1,6 +1,8 @@
 import react from 'react'
 
 const notification=()=>{
+    const API_URL= process.env.REACT_APP_API_URL
+
     return (
         <div>
             <h2>

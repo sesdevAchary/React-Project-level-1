@@ -1,0 +1,7 @@
+1. npx create react app folder creation ..
+2. depedencies download..
+3. create different .js files inside src
+4. add headers..
+5. connect browser and server , showing db.json as output with cosole.log and response statement
+6. add personlist.css
+ 
