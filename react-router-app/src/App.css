@@ -1,19 +1,22 @@
 /* src/styles/App.css */
 
 /* Global Box Styles */
+*{
+  background-color: #28a745;
+}
 .box-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
+  border: 1px solid #b15f5f;
   border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 10px rgba(244, 241, 241, 0.1);
   max-width: 500px;
   /* Changed from fixed width to max-width */
   margin: 50px auto;
-  background-color: #f9f9f9;
+  background-color: #1b1515;
 }
 
 /* Form Styles */
@@ -26,7 +29,7 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #833939;
   border-radius: 4px;
 }
 
@@ -67,7 +70,7 @@
 }
 
 .btn-add {
-  background-color: #ffc107;
+  background-color: #3f3412;
 }
 
 .btn-delete {
