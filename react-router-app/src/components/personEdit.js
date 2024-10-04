@@ -1,7 +1,10 @@
-import react from 'react'
+import React from 'react'
+
+const API_URL= process.env.REACT_APP_API_URL
+
 
 const personEdit=()=>{
-    const API_URL= process.env.REACT_APP_API_URL
+    console.log(API_URL)
 
     return (
         <div>

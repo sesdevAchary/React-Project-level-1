@@ -1,8 +1,10 @@
-import react from 'react'
+import React from 'react'
 
 const notification=()=>{
     const API_URL= process.env.REACT_APP_API_URL
+    console.log(API_URL)
 
+         
     return (
         <div>
             <h2>
