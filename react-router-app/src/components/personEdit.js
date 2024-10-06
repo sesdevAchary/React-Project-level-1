@@ -45,3 +45,37 @@ const PersonEdit = () => {
   const handleHome = () => {
     navigate('/'); // Navigate back to the home page
   };
+
+  return (
+    <div className="box-container">
+      <h1>Edit Person</h1>
+      <form onSubmit={handleUpdate} className="form-container">
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={person.name}
+          onChange={handleChange}
+          required
+          className="input-field"
+        />
+        <input
+          type="number"
+          name="age"
+          placeholder="Age"
+          value={person.age}
+          onChange={handleChange}
+          required
+          className="input-field"
+        />
+        <div className="person-actions">
+          <button type="submit" className="btn btn-update">Update</button>
+          <button type="button" className="btn btn-cancel" onClick={handleCancel}>Cancel</button>
+          <button type="button" className="btn btn-back" onClick={handleHome}>Back to Home</button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default PersonEdit;
