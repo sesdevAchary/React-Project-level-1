@@ -1,13 +1,13 @@
-import react from 'react'
+import React from 'react';
 
-const notFound =()=>{
-    const API_URL= process.env.REACT_APP_API_URL
+const NotFound = () => {
+  return (
+    <div className="not-found">
+      <h2>404 - Not Found</h2>
+      <p>The page you are looking for does not exist.</p>
+      <a href="/" className="btn">Go Back Home</a>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <h2>
-                If a person  not found </h2></div>
-    )
-}
-
-export default notFound ;
+export default NotFound;
