@@ -6,6 +6,12 @@ import movieTrailer from 'movie-trailer'; // fetches the URL of the given movie 
 
 // functional component //
 function App (){
-
+     const[ movie,setMovie]= usestate("oppenheimer")
+     const [ trailer,setTrailer] = usestate("")
 }
 
+function setVideo(){
+    movieTrailer(movie).then((res)=>{
+        setTrailer(res);
+    });
+}
