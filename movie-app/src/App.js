@@ -15,3 +15,18 @@ function setVideo(){
         setTrailer(res);
     });
 }
+
+// the jsx code //
+
+return(
+    /* The return statement indicates that this is part of a React component's render method. The component is rendering a top-level <div> with the class name App*/
+    <div className="App">
+        <div className = "searchBox">
+            <label>
+                search any movie:{" "}
+            </label>
+            
+            
+        </div>
+    </div>
+)
