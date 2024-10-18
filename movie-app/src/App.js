@@ -8,7 +8,7 @@ import movieTrailer from 'movie-trailer'; // fetches the URL of the given movie 
 function App (){
      const[ movie,setMovie]= usestate("oppenheimer")
      const [ trailer,setTrailer] = usestate("")
-}
+
 
 function setVideo(){
     movieTrailer(movie).then((res)=>{
@@ -25,8 +25,13 @@ return(
             <label>
                 search any movie:{" "}
             </label>
-            
+            <inout type="text" onchange ={(e)=>{setMovie(e.target.value)}} />
+             
+             <button onClick={()=>{setVideo()}}></button>
             
         </div>
+        <ReactPlayer url = {trailer} controls = {true}/>
     </div>
-)
+);
+}
+export default App;
