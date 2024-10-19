@@ -2,6 +2,8 @@ import React , { useEffect,useState} from 'react' /* hooks that manage state and
 import axios from 'axios';
 import './PersonList.css';
 
+
+// The endpoint for fetching, adding, updating, and deleting persons.//
 const API_URL = 'https://3001-sesdevachar-reactprojec-7guw5cetzf4.ws-us116.gitpod.io/persons';
 
 const PersonList = () => {
