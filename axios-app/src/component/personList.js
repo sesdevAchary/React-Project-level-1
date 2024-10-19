@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React , { useEffect,useState} from 'react' /* hooks that manage state and side effects in functional components.*/
 import axios from 'axios';
-import './personList.css';
+import './PersonList.css';
 
 const API_URL = 'https://3001-sesdevachar-reactprojec-7guw5cetzf4.ws-us116.gitpod.io/persons';
 
