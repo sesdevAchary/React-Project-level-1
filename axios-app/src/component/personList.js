@@ -6,11 +6,14 @@ import './PersonList.css';
 // The endpoint for fetching, adding, updating, and deleting persons.//
 const API_URL = 'https://3001-sesdevachar-reactprojec-7guw5cetzf4.ws-us116.gitpod.io/persons';
 
-const PersonList = () => {
-  const [persons, setPersons] = useState([]);
-  const [newPerson, setNewPerson] = useState({ name: '', age: '' });
-  const [editingPerson, setEditingPerson] = useState(null);
-  const [loading, setLoading] = useState(true);
+
+//Functional component -> way to create components in react//
+const PersonList=()=>{
+
+  const [persons, setPersons] = useState([]); // array that holds the list of persons fetched from the API//
+  const [newPerson, setNewPerson] = useState({ name: '', age: '' }); // bject to store data for a new person being added//
+  const [editingPerson, setEditingPerson] = useState(null); // object that holds the person currently being edited//
+  const [loading, setLoading] = useState(true); //oolean to indicate whether the data is still being fetched.//
 
   useEffect(() => {
     fetchPersons();
