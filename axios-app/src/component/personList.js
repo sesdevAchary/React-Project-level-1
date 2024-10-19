@@ -1,23 +1,25 @@
-import React , { useEffect,useState} from 'react' /* hooks that manage state and side effects in functional components.*/
+import React , { useEffect,useState} from 'react' // hooks that manage state and side effects in functional components.//
 import axios from 'axios';
 import './PersonList.css';
 
 
-// The endpoint for fetching, adding, updating, and deleting persons.//
+/* The endpoint for fetching, adding, updating, and deleting persons.*/
 const API_URL = 'https://3001-sesdevachar-reactprojec-7guw5cetzf4.ws-us116.gitpod.io/persons';
 
 
-//Functional component -> way to create components in react//
+/* Functional component -> way to create components in react */
 const PersonList=()=>{
 
   const [persons, setPersons] = useState([]); // array that holds the list of persons fetched from the API//
   const [newPerson, setNewPerson] = useState({ name: '', age: '' }); // bject to store data for a new person being added//
   const [editingPerson, setEditingPerson] = useState(null); // object that holds the person currently being edited//
-  const [loading, setLoading] = useState(true); //oolean to indicate whether the data is still being fetched.//
+  const [loading, setLoading] = useState(true); //boolean to indicate whether the data is still being fetched.//
 
-  useEffect(() => {
-    fetchPersons();
-  }, []);
+  /* hook to perform side effects on react component like (fetching data(here persons from the api) 
+  , manipulating a dom)*/
+  useEffect(()=>{
+    fetchPersons(); // for fetching a list of persons from an API or another source.//
+  },[]); // empty array is the depedency array
 
   // READ operation
   const fetchPersons = async () => {
