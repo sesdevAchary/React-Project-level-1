@@ -21,24 +21,30 @@ const PersonList=()=>{
     fetchPersons(); // for fetching a list of persons from an API or another source.//
   },[]); // empty array is the depedency array
 
-  // READ operation
-  const fetchPersons = async () => {
-    try {
-      const response = await axios.get(API_URL);
-      setPersons(response.data);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching persons:', error);
-      alert('Failed to fetch persons. Please try again.');
-      setLoading(false);
+
+
+
+  // READ operation........................................................................................
+
+  const fetchPersons= async ()=>{
+    try{
+      const response= await axios.get(API_URL); // axios is  used to fetch data from the api , AWAIT , pauses the execution of the function until the promise returned by axios.get is resolved. //
+      setPersons(response.data); //response.data typically contains the list of persons fetched//
+      setLoading(false); //indicating that the data fetching process has completed.//           
+    } catch(error){
+      console.log("error fatching person",error);  // console.error(" "error fatching person",error )//
+      alert('Failed to fetch persons. Please try again.')
+      setLoading(false);  //indicating that the fetch attempt has finished, even if it was unsuccessful.//
     }
   };
+ 
 
-  // CREATE operation
+
+  // CREATE operation..................................................
   const addPerson = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(API_URL, newPerson);
+      const response = await axios.post(API_URL, newPerson); 
       setPersons([...persons, response.data]);
       setNewPerson({ name: '', age: '' });
       alert(`New person added: ${response.data.name}`);
