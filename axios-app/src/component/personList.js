@@ -50,8 +50,15 @@ const PersonList=()=>{
       setPersons([...persons,response.data]);/* updates the persons state ,creates an array
                                               (including existing person + newly updated person)
                                               (...) is used to create a new array with the current persons and the new entry*/
-       setNewPerson({name:'',age:''});
-    }
+       setNewPerson({name:'',age:''}); //resets the newPerson state back to its initial state (empty name and age), likely to clear the input fields in the form.
+       alert("New persons added:${response.data.name}");
+  } catch (error) {
+    console.error('Error adding person:', error);
+    alert('Failed to add person. Please try again.');
+  }
+};
+    
+  
 
   // UPDATE operation
   const updatePerson = async (e) => {
