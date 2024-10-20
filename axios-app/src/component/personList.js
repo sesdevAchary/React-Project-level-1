@@ -53,7 +53,7 @@ const PersonList=()=>{
        setNewPerson({name:'',age:''}); //resets the newPerson state back to its initial state (empty name and age), likely to clear the input fields in the form.
        alert("New persons added:${response.data.name}");
   } catch (error) {
-    console.error('Error adding person:', error);
+    console.error('Error adding person:', error); // logs any error that occurs during the POST request to the console for debugging purposes//
     alert('Failed to add person. Please try again.');
   }
 };
