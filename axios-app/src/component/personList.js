@@ -11,7 +11,7 @@ const API_URL = 'https://3001-sesdevachar-reactprojec-7guw5cetzf4.ws-us116.gitpo
 const PersonList=()=>{
 
   const [persons, setPersons] = useState([]); // array that holds the list of persons fetched from the API//
-  const [newPerson, setNewPerson] = useState({ name: '', age: '' }); // bject to store data for a new person being added//
+  const [newPerson, setNewPerson] = useState({ name: '', age: '' }); // object to store data for a new person being added//
   const [editingPerson, setEditingPerson] = useState(null); // object that holds the person currently being edited//
   const [loading, setLoading] = useState(true); //boolean to indicate whether the data is still being fetched.//
 
@@ -41,18 +41,17 @@ const PersonList=()=>{
 
 
   // CREATE operation..................................................
+
   const addPerson = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(API_URL, newPerson); 
-      setPersons([...persons, response.data]);
-      setNewPerson({ name: '', age: '' });
-      alert(`New person added: ${response.data.name}`);
-    } catch (error) {
-      console.error('Error adding person:', error);
-      alert('Failed to add person. Please try again.');
+    e.preventDefault(); // to prevent the page from refreshing //
+    try{
+      const response = await axios.post(API_URL,newPerson); // passing newPerson as the request body//
+
+      setPersons([...persons,response.data]);/* updates the persons state ,creates an array
+                                              (including existing person + newly updated person)
+                                              (...) is used to create a new array with the current persons and the new entry*/
+       setNewPerson({name:'',age:''});
     }
-  };
 
   // UPDATE operation
   const updatePerson = async (e) => {
