@@ -61,13 +61,10 @@ const PersonList=()=>{
   
 
   // UPDATE operation
-  const updatePerson = async (e) => {
+  const updatePerson = async(e)=>{
     e.preventDefault();
-    try {
-      const response = await axios.put(`${API_URL}/${editingPerson.id}`, editingPerson);
-      setPersons(persons.map(person => person.id === editingPerson.id ? response.data : person));
-      setEditingPerson(null);
-      alert(`Person updated: ${response.data.name}`);
+    try{
+      const response = await axios.put(`${API_URL}/${editingPerson.id}`,editingPerson);
     } catch (error) {
       console.error('Error updating person:', error);
       alert('Failed to update person. Please try again.');
