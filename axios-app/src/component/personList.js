@@ -68,6 +68,8 @@ const PersonList=()=>{
                                                                                          editingPerson (an object) is sent as the request body, which contains the updated information*/
       setPersons(persons.map(person=> person.id === editingPerson.id ? response.data : person)); /* update the local state person , maps over existing array,checking (each person's id matches editingPerson.id)
                                                                                                   If it matches, it replaces that person with the updated data received in response.data. If not, it keeps the existing person.*/
+      setEditingPerson(null);
+
     } catch (error) {
       console.error('Error updating person:', error);
       alert('Failed to update person. Please try again.');
