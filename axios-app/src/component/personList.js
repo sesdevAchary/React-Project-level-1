@@ -64,7 +64,8 @@ const PersonList=()=>{
   const updatePerson = async(e)=>{
     e.preventDefault();
     try{
-      const response = await axios.put(`${API_URL}/${editingPerson.id}`,editingPerson);
+      const response = await axios.put(`${API_URL}/${editingPerson.id}`,editingPerson); /* constructs the URL using API_URL and the id of the editingPerson.
+                                                                                         editingPerson (an object) is sent as the request body, which contains the updated information*/
     } catch (error) {
       console.error('Error updating person:', error);
       alert('Failed to update person. Please try again.');
