@@ -95,9 +95,13 @@ const PersonList=()=>{
                                             targeting the specific resource to be deleted.
                                              e.g.-> await axios.delete('https://api.example.com/persons/123');*/
     setPersons(persons.filter(person=> person.id !== id));
-  }
+    alert(`Person with ID ${id} has been removed.`);
 
- }
+  }catch (error) {
+    console.error('Error deleting person:', error);
+    alert('Failed to delete person. Please try again.');
+  }
+};
 
   if (loading) {
     return <div className="loading">Loading...</div>;
