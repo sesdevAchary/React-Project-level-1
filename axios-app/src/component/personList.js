@@ -107,6 +107,9 @@ const PersonList=()=>{
     return <div className="loading">Loading...</div>;
   }
 
+
+
+  // component's render output.To return  a JSX structure containing a <div> with an <h2> header.//
   return (
     <div className="person-list">
       <h2>Person List</h2>
