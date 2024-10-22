@@ -89,16 +89,15 @@ const PersonList=()=>{
   };
 
   // DELETE operation
-  const deletePerson = async (id) => {
-    try {
-      await axios.delete(`${API_URL}/${id}`);
-      setPersons(persons.filter(person => person.id !== id));
-      alert(`Person with ID ${id} has been removed.`);
-    } catch (error) {
-      console.error('Error deleting person:', error);
-      alert('Failed to delete person. Please try again.');
-    }
-  };
+ const deletePerson= async(id)=>{
+  try{
+    await axios.delete(`${API_URL}/${id}`); /*placeholder is replaced with the actual id value passed to the deletePerson function, 
+                                            targeting the specific resource to be deleted.
+                                             e.g.-> await axios.delete('https://api.example.com/persons/123');*/
+    setPersons(persons.filter(person=> person.id !== id));
+  }
+
+ }
 
   if (loading) {
     return <div className="loading">Loading...</div>;
