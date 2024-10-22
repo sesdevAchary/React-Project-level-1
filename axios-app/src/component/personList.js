@@ -114,7 +114,7 @@ const PersonList=()=>{
     <div className="person-list">
       <h2>Person List</h2>
       
-      {/* Add Person Form */}
+      {/* Add Person Form , for calling  the addPerson function upon submission.*/}
       <form onSubmit={addPerson} className="add-person-form">
         <input
           type="text"
