@@ -64,11 +64,23 @@ const PersonList=()=>{
   const updatePerson = async(e)=>{
     e.preventDefault();
     try{
-      const response = await axios.put(`${API_URL}/${editingPerson.id}`,editingPerson); /* constructs the URL using API_URL and the id of the editingPerson.
+
+      //sends a request to update a specific person's data on the server and stores the server's response in the response variable.//
+      const response = await axios.put(`${API_URL}/${editingPerson.id}`,editingPerson); /* constructs the URL using API_URL(e.g./api/persons) and the id of the editingPerson.
                                                                                          editingPerson (an object) is sent as the request body, which contains the updated information*/
-      setPersons(persons.map(person=> person.id === editingPerson.id ? response.data : person)); /* update the local state person , maps over existing array,checking (each person's id matches editingPerson.id)
-                                                                                                  If it matches, it replaces that person with the updated data received in response.data. If not, it keeps the existing person.*/
-      setEditingPerson(null);
+       
+      //updates the state of the persons array by replacing the person who was edited//                                                                                         
+      setPersons(persons.map(person=> person.id === editingPerson.id ? response.data : person)); /* map method creates a new array based on the existing persons array(iterates through each perosn in the array).
+                                                                                                  next the condition checks if the id of the current person in the loop matches the id of the editingPerson
+                                                                                                   if true -> replaces the current person data with response.data , else keeps the original person
+                                                                                                  now , result of map is a new array where the updated person replaces the old one, while all other persons remain unchanged.*/
+
+      setEditingPerson(null); /* resets the editingPerson state to null, indicating that no person is currently being edited.*/
+      
+
+      alert(`Person updated: ${response.data.name}`); /*a template literal, which allows for embedded expressions. retrieves the name property from the response.data object.
+                                                        This is the updated name of the person returned by the server. */
+
 
     } catch (error) {
       console.error('Error updating person:', error);
