@@ -110,29 +110,38 @@ const PersonList=()=>{
 
 
   // component's render output.To return  a JSX structure containing a <div> with an <h2> header.//
-  return (
-    <div className="person-list">
-      <h2>Person List</h2>
+  // return (
+  //   <div className="person-list">
+  //     <h2>Person List</h2>
       
-      {/* Add Person Form , for calling  the addPerson function upon submission.*/}
-      <form onSubmit={addPerson} className="add-person-form">
-        <input
-          type="text"
-          value={newPerson.name}
-          onChange={(e) => setNewPerson({...newPerson, name: e.target.value})}
-          placeholder="Name"
-          required
-        />
-        <input
-          type="number"
-          value={newPerson.age}
-          onChange={(e) => setNewPerson({...newPerson, age: e.target.value})}
-          placeholder="Age"
-          required
-        />
-        <button type="submit" className="btn btn-add">Add Person</button>
-      </form>
+  //     {/* Add Person Form , for calling  the addPerson function upon submission.*/}
+  //     <form onSubmit={addPerson} className="add-person-form">
+  //       <input
+  //         type="text"
+  //         value={newPerson.name}
+  //         onChange={(e) => setNewPerson({...newPerson, name: e.target.value})}
+  //         placeholder="Name"
+  //         required
+  //       />
+  //       <input
+  //         type="number"
+  //         value={newPerson.age}
+  //         onChange={(e) => setNewPerson({...newPerson, age: e.target.value})}
+  //         placeholder="Age"
+  //         required
+  //       />
+  //       <button type="submit" className="btn btn-add">Add Person</button>
+  //     </form>
 
+  // The JSx content........//
+  return(
+    <div>person-list
+      <h2>Person list</h2>
+       {/*ADD PERSON FORM , fro calling the addPerson function*/}
+       <form onSubmit={addPerson} className="add-person-form"> {/*This prop sets up an event handler that listens for the form's submit event.*/}
+
+       </form>
+  
       {/* Person List */}
       <ul className="person-items">
         {persons.map(person => (
