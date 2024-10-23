@@ -155,7 +155,7 @@ const PersonList=()=>{
        />
        </form>
   
-      {/* Person List */}
+      {/* Person List
       <ul className="person-items">
         {persons.map(person => (
           <li key={person.id} className="person-item">
@@ -174,7 +174,30 @@ const PersonList=()=>{
                   required
                 />
                 <button type="submit" className="btn btn-update">Update</button>
-                <button type="button" className="btn btn-cancel" onClick={() => setEditingPerson(null)}>Cancel</button>
+                <button type="button" className="btn btn-cancel" onClick={() => setEditingPerson(null)}>Cancel</button> */}
+
+                <ul className='persons-item'>
+                  {persons.map(person=>{
+                    <li key={person.id} className="person-item">
+                      {editingPerson && editingPerson.id === person.id ?(
+                        <form onSubmit={updatePerson} className='edit-person-form'>
+                          <input
+                          type="text"
+                          value={editingPerson.name}
+                          onChange={(e)=>setEditingPerson({...editingPerson,name:e.target.value})}
+                          required/>
+                          <input
+                          type="text"
+                          value={editingPerson.age}
+                          onChange={(e)=>setEditingPerson({...editingPerson,age:e.target.value})}
+                          required
+                          />
+                        
+                        </form>
+                      )}
+                    </li>
+                  })}
+                </ul>
               </form>
             ) : (
               <>
