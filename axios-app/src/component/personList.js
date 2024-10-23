@@ -139,7 +139,14 @@ const PersonList=()=>{
       <h2>Person list</h2>
        {/*ADD PERSON FORM , fro calling the addPerson function*/}
        <form onSubmit={addPerson} className="add-person-form"> {/*This prop sets up an event handler that listens for the form's submit event.*/}
-
+       <input 
+       type='text'
+       value={newPerson,name} {/*This prop binds the value of the input field to the name property of the newPerson state object.*/}
+       onChange={(e)=>setNewPerson({...newPerson,name:e.target.value})}
+       placeholder='name'
+       required
+       />
+       
        </form>
   
       {/* Person List */}
