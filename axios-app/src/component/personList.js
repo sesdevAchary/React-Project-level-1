@@ -156,30 +156,10 @@ const PersonList = () => {
       </form>
 
       {/* Person List*/}
-      {/* <ul className="person-items">
-        {persons.map(person => (
-          <li key={person.id} className="person-item">
-            {editingPerson && editingPerson.id === person.id ? (
-              <form onSubmit={updatePerson} className="edit-person-form">
-                <input
-                  type="text"
-                  value={editingPerson.name}
-                  onChange={(e) => setEditingPerson({...editingPerson, name: e.target.value})}
-                  required
-                />
-                <input
-                  type="number"
-                  value={editingPerson.age}
-                  onChange={(e) => setEditingPerson({...editingPerson, age: e.target.value})}
-                  required
-                />
-                <button type="submit" className="btn btn-update">Update</button>
-                <button type="button" className="btn btn-cancel" onClick={() => setEditingPerson(null)}>Cancel</button> */}
-
       <ul className='"person-items'>
         {persons.map(person => (
           <li key={person.id} className='person-item'>  {/*The key prop helps React identify which items have changed, are added, or are removed.*/}
-            {editingPerson && editingPerson.id === person.id ? ({/* if( there is an editingPerson and if it matches the current person ) {renders the edit form} else displays it*/ }
+            {editingPerson && editingPerson.id === person.id ? ( 
               < form onSubmit={updatePerson} className="edit-person-form">
             <input
               type="text"
