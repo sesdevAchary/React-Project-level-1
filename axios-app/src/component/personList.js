@@ -179,7 +179,15 @@ const PersonList=()=>{
       <ul className='"person-items'>
         {persons.map(person =>(
             <li key={person.id} className='person-item'>  {/*The key prop helps React identify which items have changed, are added, or are removed.*/}
-                 
+                 {editingPerson && editingPerson.id === person.id ? (   {/* if( there is an editingPerson and if it matches the current person ) {renders the edit form} else displays it*/}
+                  <form onSubmit={updatePerson} className="edit-person-form">
+                    <input 
+                      type="text"
+                      value={editingPerson.name}
+                      onChange={(e)=>setEditingPerson({...editingPerson,name:e.target.value})}
+                      required
+                      />
+                 )}
             </li>
         ))
         
