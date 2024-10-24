@@ -137,7 +137,7 @@ const PersonList=()=>{
   return(
     <div>person-list
       <h2>Person list</h2>
-       {/*ADD PERSON FORM , fro calling the addPerson function*/}
+       {/*ADD PERSON FORM , for calling the addPerson function*/}
        <form onSubmit={addPerson} className="add-person-form"> {/*This prop sets up an event handler that listens for the form's submit event.*/}
        <input 
        type="text"
@@ -155,8 +155,8 @@ const PersonList=()=>{
        />
        </form>
   
-      {/* Person List
-      <ul className="person-items">
+      {/* Person List*/}
+     {/* <ul className="person-items">
         {persons.map(person => (
           <li key={person.id} className="person-item">
             {editingPerson && editingPerson.id === person.id ? (
@@ -176,44 +176,11 @@ const PersonList=()=>{
                 <button type="submit" className="btn btn-update">Update</button>
                 <button type="button" className="btn btn-cancel" onClick={() => setEditingPerson(null)}>Cancel</button> */}
 
-                <ul className='persons-item'>
-                  {persons.map(person=>{
-                    <li key={person.id} className="person-item">
-                      {editingPerson && editingPerson.id === person.id ?(
-                        <form onSubmit={updatePerson} className='edit-person-form'>
-                          <input
-                          type="text"
-                          value={editingPerson.name}
-                          onChange={(e)=>setEditingPerson({...editingPerson,name:e.target.value})}
-                          required/>
-                          <input
-                          type="text"
-                          value={editingPerson.age}
-                          onChange={(e)=>setEditingPerson({...editingPerson,age:e.target.value})}
-                          required
-                          />
-                        
-                        </form>
-                      )}
-                    </li>
-                  })}
-                </ul>
-              </form>
-            ) : (
-              <>
-                <span className="person-info">{person.name} (Age: {person.age})</span>
-                <div className="person-actions">
-                  <button className="btn btn-edit" onClick={() => setEditingPerson(person)}>Edit</button>
-                  <button className="btn btn-delete" onClick={() => deletePerson(person.id)}>Delete</button>
-                </div>
-              </>
-            )}
-          </li>
-        ))}
-      </ul>
-      
-    </div>
-  );
-};
-
-export default PersonList;
+      <ul className='"person-items'>
+        {persons.map(person =>(
+            <li key={person.id} className='person-item'>  {/*The key prop helps React identify which items have changed, are added, or are removed.*/}
+                 
+            </li>
+        ))
+        
+        </ul>       
