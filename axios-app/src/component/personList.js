@@ -187,6 +187,16 @@ const PersonList=()=>{
                       onChange={(e)=>setEditingPerson({...editingPerson,name:e.target.value})}
                       required
                       />
+                    <input
+                      type="text"
+                      value={editingPerson.age}
+                      onChange={(e)=>setEditingPerson({...editingPerson,age:e.target.value})}
+                      required
+                      />
+                    <button type="submit" className='btn btn-update'>Update</button>  {/* submit the form,triggers the update fun.*/}
+                    <butoon type="butotn" className="btn btn-cancel" onClick={()=>setEditingPerson(null)}>cancel</butoon> {/*resets editingPerson to null, exiting edit mode.*/}
+}
+
                  )}
             </li>
         ))
