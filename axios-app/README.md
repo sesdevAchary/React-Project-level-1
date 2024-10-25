@@ -2,6 +2,7 @@
 ```bash
 npx create-react-app <project name>
 cd <project name>
+```
 
 ### install axios
 ``` bash
