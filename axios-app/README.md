@@ -33,3 +33,7 @@ npm install json-server
 ``` bash
 json-server --watch db.json --port 3001
 ```
+
+### Run the application
+- Run the db in one tab first and then the application in another tab
+- make the server and db public so that they can access each other
