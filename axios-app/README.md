@@ -19,14 +19,7 @@ npm install -g json-server
 npm install json-server
 ```
 - Create a db.json file in the root location of the project and add sample data in it
-
-- Run the db
-
-``` bash
-json-server --watch db.json --port 3001
-```
-
-``` bash
+  ``` bash
 {
 "persons": [
     { "id": 1, "name": "Alice", "age": 25 },
@@ -34,3 +27,11 @@ json-server --watch db.json --port 3001
 ]
 }
 ```
+
+- Run the db
+
+``` bash
+json-server --watch db.json --port 3001
+```
+
+
