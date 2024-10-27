@@ -16,7 +16,7 @@ const personList = () => {
 
     const[notification,setNotification]=useState("");
 
-    useEffect(()=>{   //fatch data from the api
+    useEffect(()=>{   /* useEffect hook allows to perform side effects in a functional component*/
       const fetchPeople=async()=>{
         try{
           const response = await axios.get(API_URL)
@@ -26,7 +26,7 @@ const personList = () => {
           console.error('error fetching',error)
         }
       };
-      fetchPeople();
+      fetchPeople(); /* initiating the API request.*/
 
     },[]);
 
