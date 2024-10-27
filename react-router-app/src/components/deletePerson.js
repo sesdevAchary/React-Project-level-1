@@ -1,13 +1,17 @@
-import react from 'react'
+import React from 'react';
 
-const deletePerson=()=>{
-    const API_URL= process.env.REACT_APP_API_URL
+const deletePerson = ({ id, onDelete }) => {
+  const handleDelete = () => {
+    if (window.confirm('Are you sure you want to delete this person?')) {
+      onDelete(id);
+    }
+  };
 
-    return (
-        <div>
-            <h2>
-                TO Delete a person </h2></div>
-    )
-}
+  return (
+    <button className="btn btn-delete" onClick={handleDelete}>
+      Delete
+    </button>
+  );
+};
 
 export default deletePerson;
