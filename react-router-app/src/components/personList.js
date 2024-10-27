@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Link} from "react-router-dom"
 import axios from 'axios'
 
-import notification from './notification'
+import Notification from './notification'
 import '../styles/personList.css';
 
 const API_URL = process.env.REACT_APP_API_URL
@@ -10,7 +10,10 @@ console.log(API_URL)
 
 
 const personList = () => {
-    const[people,setPeople]=useState([]);
+    const[people,setPeople]=useState([]);/*people-> to hold an array of person of object 
+                                            useState-> Initializes people with an empty array,
+                                            the component will eventually populate this array with data,from an API or other data source.*/
+
     const[notification,setNotification]=useState("");
 
     useEffect(()=>{   //fatch data from the api
