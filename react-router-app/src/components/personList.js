@@ -47,7 +47,7 @@ const personList = () => {
         {people.map(person=>(
           <tr key={person.id}>
             <td>
-              <Link to={`/person/${person.id}`} className='person-name'>
+              <Link to={`/person/${person.id}`} className='person-name'> {/* Contains a Link that navigates to a route corresponding to the person's ID (/person/${person.id}).*/}
               {person.name}</Link>
             </td>
             <td>perosn.age</td>
