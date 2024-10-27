@@ -35,7 +35,7 @@ const personList = () => {
     <div class="person-list">
       <h2>
         To edit  a person list</h2>
-        <Link to='/add' className="btn btn-add add-person-button"> ADD PERSON</Link>
+        <Link to='/add' className="btn btn-add add-person-button"> ADD PERSON</Link> {/* Link component from r-r-dom,to create a navigable link to the /add route, which is presumably a page for adding a new person.*/}
         <table>
           <thead>
             <tr>
