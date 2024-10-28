@@ -60,3 +60,7 @@ import Notification from './notification.'
 
 const API_URL = process.env.REACT_APP_API_URL;
 
+
+const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*/}
+
+}
