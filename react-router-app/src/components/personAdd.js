@@ -56,3 +56,7 @@ import axios from 'axios'
 // export default personAdd;
 
 import Notification from './notification.'
+   
+
+const API_URL = process.env.REACT_APP_API_URL;
+
