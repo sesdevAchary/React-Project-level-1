@@ -68,7 +68,7 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
    
 
    const handleSubmit= async(e)=>{
-    
+       e.preventDefault();
    }
     }
 
