@@ -70,7 +70,7 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
    const handleSubmit= async(e)=>{
        e.preventDefault(); {/*  prevents the default form submission behavior, which typically refreshes the page*/}
 
-       if(!name  || !age) return;
+       if(!name  || !age) return; {/* checks if name and age is falsy (undef,missing,null)*/}
    }
     }
 
