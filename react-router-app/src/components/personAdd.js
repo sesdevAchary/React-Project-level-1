@@ -86,7 +86,7 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
         setTimeout(() => navigate(`/person/${newPersonId}`), 2000); {/*Wait for 2 seconds before navigating*/}
        } catch(error){
           console.error('error adding person :',error);
-          setShowNotification({type: 'error',text:`Failed to add a person.Try again`});
+          setShowNotification({type: 'error',text:'Failed to add a person.Try again'});
        }
    }
     }
