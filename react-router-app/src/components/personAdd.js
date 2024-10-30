@@ -71,6 +71,10 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
        e.preventDefault(); {/*  prevents the default form submission behavior, which typically refreshes the page*/}
 
        if(!name  || !age) return; {/* checks if name and age is falsy (undef,missing,null)*/}
+
+       try{
+        const response = await post(API_URL,{name,age});
+       }
    }
     }
 
