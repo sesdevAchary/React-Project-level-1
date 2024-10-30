@@ -83,6 +83,9 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
 
        // successfully person added notification shown //
         setShowNotification({type:'success',text:`person "${response.data.name}" added successfully`});
+        setTimeout(() => navigate(`/person/${newPersonId}`), 2000); {/*Wait for 2 seconds before navigating*/}
+       } catch(error){
+        
        }
    }
     }
