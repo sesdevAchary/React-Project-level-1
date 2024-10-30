@@ -77,8 +77,7 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
         const newPersonId = response.data.id;{/* extracts the id of the newly added person from the response data.*/}
          
         setName('');
-        setAge('');
-  
+        setAge('');  {/* reset the name and age state variables to empty strings, clearing the form inputs.*/}
        }
    }
     }
