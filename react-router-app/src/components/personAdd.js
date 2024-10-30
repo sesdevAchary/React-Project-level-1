@@ -74,6 +74,8 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
 
        try{
         const response = await post(API_URL,{name,age});
+        const newPersonId = response.data.id;{/* extracts the id of the newly added person from the response data.*/}
+
        }
    }
     }
