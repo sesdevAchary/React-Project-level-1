@@ -78,6 +78,11 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
          
         setName('');
         setAge('');  {/* reset the name and age state variables to empty strings, clearing the form inputs.*/}
+         
+
+
+       // successfully person added notification shown //
+        setShowNotification({type:'success',text:`person "${response.data.name}" added successfully`});
        }
    }
     }
