@@ -112,7 +112,19 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
             onChange={(e)=>setAge(e.target.value)}
             required
             className='input-field'
-        </form>
-     </div>
+            />
+            <div className='button-group'>
+                <button type="submit" className='btn btn-add'>ADD PERSON</button>
+                <button type="button" className="btn btn-cancel" onClick={() => navigate('/')}>Cancel</button>
 
-}
+            </div>
+
+            
+        </form>
+
+        {showNotification && <Notification message={showNotification} onClose={handleCloseNotification} />}
+
+     </div>
+);
+};
+export default PersonAdd;
