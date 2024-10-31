@@ -7,7 +7,7 @@ import '../styles/PersonEdit.css'; // Component-specific styles
 const API_URL = process.env.REACT_APP_API_URL;
 
 const PersonEdit = () => {
-  const { id } = useParams();
+  const { id } = useParams(); {/* retrives the id parameter using the useParams()*/}
   const navigate = useNavigate();
   const [person, setPerson] = useState({ name: '', age: '' });
 
