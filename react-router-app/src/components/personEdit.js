@@ -27,10 +27,12 @@ const PersonEdit = () => {
     fetchPerson();
   }, [id]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setPerson({ ...person, [name]: value });
-  };
+
+  // handling input changes in form//
+    const handleChange=(e)=>{
+      const {name,value}=e.target; {/* refering the element that triggered the event*/}
+      setPerson({...person,[name]:value});
+    };
 
   const handleUpdate = async (e) => {
     e.preventDefault();
