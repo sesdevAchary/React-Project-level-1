@@ -92,7 +92,8 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
    const handleCloseNotification = () => {
     setShowNotification(null);
     };
-
+ 
+    return(
      <div className = 'box-container'>
         <h2> ADD PERSON </h2>
         <form onSubmit={handleSubmit} className='form-container'>
@@ -127,4 +128,4 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
      </div>
 );
 };
-export default PersonAdd;
+export default personAdd;
