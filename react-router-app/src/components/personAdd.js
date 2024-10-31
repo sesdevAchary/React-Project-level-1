@@ -93,5 +93,26 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
     setShowNotification(null);
     };
 
+     <div className = 'box-container'>
+        <h2> ADD PERSON </h2>
+        <form onSubmit={handleSubmit} className='form-container'>
+            <input 
+            type='text'
+            placeholder='Name'
+            value={name}
+            onChange={(e)=> setName(e.target.value)}
+            required
+            className = 'input-field'
+            />
+
+            <input 
+            type = 'number'
+            placeholder='Age'
+            value={age}
+            onChange={(e)=>setAge(e.target.value)}
+            required
+            className='input-field'
+        </form>
+     </div>
 
 }
