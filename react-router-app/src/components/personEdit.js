@@ -30,8 +30,8 @@ const PersonEdit = () => {
 
   // handling input changes in form//
     const handleChange=(e)=>{
-      const {name,value}=e.target; {/* refering the element that triggered the event*/}
-      setPerson({...person,[name]:value});
+      const {name,value}=e.target; {/* e.target=refering the element that triggered the event*/}
+      setPerson({...person,[name]:value}); {/* updating the property with the key specified by name to the new value*/}
     };
 
   const handleUpdate = async (e) => {
