@@ -88,8 +88,10 @@ const personAdd = ({ onPersonAdd =()=>{  }})=>{   {/* execute a no-op function.*
           console.error('error adding person :',error);
           setShowNotification({type: 'error',text:'Failed to add a person.Try again'});
        }
-   }
-    }
+   };
+   const handleCloseNotification = () => {
+    setShowNotification(null);
+    };
 
 
 }
