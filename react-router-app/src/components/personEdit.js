@@ -11,11 +11,15 @@ const PersonEdit = () => {
   const navigate = useNavigate();
   const [person, setPerson] = useState({ name: '', age: '' });
 
+
+
+
+  // for fetching data ( when the id will change)//
   useEffect(() => {
     const fetchPerson = async () => {
       try {
         const response = await axios.get(`${API_URL}/${id}`);
-        setPerson(response.data);
+        setPerson(response.data); {/* etched data is stored in the component's state, allowing the UI to update with the new information*/}
       } catch (error) {
         console.error('Error fetching person:', error);
       }
