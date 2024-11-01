@@ -15,6 +15,15 @@ const personDetail=()=>{
   const [person,setPerson]= useState(null);
   const [ showNotification,setShowNotification]=useState(null);
 
+
+
+  // to fetch data //
+
+  useEffect(()=>{
+    const fetchPerson = async()=>{
+        try{}
+    }
+  })
 }
 
 export default personDetail;
