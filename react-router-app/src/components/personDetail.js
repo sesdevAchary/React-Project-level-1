@@ -21,7 +21,14 @@ const personDetail=()=>{
 
   useEffect(()=>{
     const fetchPerson = async()=>{
-        try{}
+        try{
+            console.log('fetching data from');
+            const response = await axios.get(`${API_URL}/${id}`);
+            console.log('person data:', response.data);
+            setPerson(response.data);
+        }catch (error){
+            
+        }
     }
   })
 }
