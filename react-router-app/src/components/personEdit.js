@@ -47,12 +47,14 @@ const PersonEdit = () => {
     }
    };
 
+
+   // changing the route without reloding the page//
   const handleCancel = () => {
-    navigate(`/person/${id}`); // Navigate back to the person details page
+    navigate(`/person/${id}`); {/* takes the user back to a specific person's detail page*/}
   };
 
   const handleHome = () => {
-    navigate('/'); // Navigate back to the home page
+    navigate('/');   {/* Navigate back to the home page */}
   };
 
   return (
