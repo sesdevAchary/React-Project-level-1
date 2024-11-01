@@ -11,6 +11,9 @@ const API_URL = process.env.REACT_APP_API_URL
 
 const personDetail=()=>{
   const{id}= useParams(); /* to extract id parameter */
+  const navigate = useNavigate(); /* to programmatically navigate within the application */
+  const [person,setPerson]= useState(null);
+  
 }
 
 export default personDetail;
