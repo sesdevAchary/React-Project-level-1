@@ -35,6 +35,8 @@ const PersonEdit = () => {
     };
 
   
+
+    //  handles form submissions for updating a person's details.//
    const handleUpdate = async(e)=>{
     e.preventDefault();
     try{
