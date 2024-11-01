@@ -34,15 +34,16 @@ const PersonEdit = () => {
       setPerson({...person,[name]:value}); {/* updating the property with the key specified by name to the new value*/}
     };
 
-  const handleUpdate = async (e) => {
+  
+   const handleUpdate = async(e)=>{
     e.preventDefault();
-    try {
-      await axios.put(`${API_URL}/${id}`, person);
-      navigate(`/person/${id}`); // Redirect to person details page after update
-    } catch (error) {
-      console.error('Error updating person:', error);
+    try{
+      await axios.put('${API_URL}/${id}',person);
+      navigate(`/person/${id}`); {/* to redirect the user to the details page for the updated person,The URL is constructed using the id*/}
+    }catch(error){
+      console.error('error in updating the person:', error);
     }
-  };
+   };
 
   const handleCancel = () => {
     navigate(`/person/${id}`); // Navigate back to the person details page
