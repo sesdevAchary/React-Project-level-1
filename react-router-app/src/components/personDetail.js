@@ -1,5 +1,5 @@
 import React ,{useEffect,usestate} from 'react'
-import {userParams,Link,useNavigate } from 'react-router-dom';
+import {useParams,Link,useNavigate } from 'react-router-dom';
 import axios from 'axios'; 
 import Notification from './notification.js'
 
@@ -10,7 +10,7 @@ const API_URL = process.env.REACT_APP_API_URL
 
 
 const personDetail=()=>{
-  const{id}= useParams();
+  const{id}= useParams(); 
 }
 
 export default personDetail;
