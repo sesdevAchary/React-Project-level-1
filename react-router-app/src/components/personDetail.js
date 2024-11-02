@@ -56,6 +56,22 @@ const personDetail=()=>{
   if (!person && showNotification) {
     return <div className="box-container">Error loading person details.</div>;
   }
+
+
+  return (
+    <div className="box-container">
+      <h1>{person.name}</h1>
+      <div className="person-info">
+        <p>Age: {person.age}</p>
+      </div>
+      <div className="person-actions">
+        <Link to={`/edit/${person.id}`} className="btn btn-update">Edit</Link>
+        <button onClick={deletePerson} className="btn btn-delete">Delete</button>
+        <Link to="/" className="btn btn-back">Back to Home</Link>
+      </div>
+      {showNotification && <Notification message={showNotification} onClose={handleCloseNotification} />}
+    </div>
+  );
 }
 
 export default personDetail;
