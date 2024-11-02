@@ -27,9 +27,12 @@ const personDetail=()=>{
             console.log('person data:', response.data);
             setPerson(response.data);
         }catch (error){
-            
+            console.error('Error fetching person:', error.response || error.message);
+            setShowNotification({ type: 'error', text: 'Error loading person details.' });
         }
     }
+
+    fetchPerson();
   })
 }
 
