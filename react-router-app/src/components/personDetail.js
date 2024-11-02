@@ -33,7 +33,29 @@ const personDetail=()=>{
     }
 
     fetchPerson();
-  })
+  }, [id]);
+  const deletePerson = async () => {
+    try {
+      await axios.delete(`${API_URL}/${id}`);
+      setShowNotification({ type: 'success', text: 'Person deleted successfully!' });
+      setTimeout(() => navigate('/'), 3000); // Navigate after showing notification for 3 seconds
+    } catch (error) {
+      console.error('Error deleting person:', error);
+      setShowNotification({ type: 'error', text: 'Error deleting person.' });
+    }
+  };
+
+  const handleCloseNotification = () => {
+    setShowNotification(null);
+  };
+
+  if (!person && !showNotification) {
+    return <div className="box-container">Loading...</div>;
+  }
+
+  if (!person && showNotification) {
+    return <div className="box-container">Error loading person details.</div>;
+  }
 }
 
 export default personDetail;
