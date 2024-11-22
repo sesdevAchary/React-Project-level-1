@@ -10,10 +10,7 @@ function App (){
      const [ trailer,setTrailer] = usestate("")
 
 
-function setVideo(){
-    movieTrailer(movie).then((res)=>{
-        setTrailer(res);
-    });
+
 }
 
 // the jsx code //
