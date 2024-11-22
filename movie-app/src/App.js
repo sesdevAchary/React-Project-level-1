@@ -12,7 +12,10 @@ function App (){
 
 
 }
-
+function setVideo(){
+    movieTrailer(movie).then((res)=>{
+        setTrailer(res);
+    });
 // the jsx code //
 
 return(
