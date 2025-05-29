@@ -1,3 +1,4 @@
-# This is my First python project under aNewPythonEra
-
-print(" Welocme to the new python  universe ")
+a= 5
+b=3
+sum = a+b
+print("sum =", sum)
