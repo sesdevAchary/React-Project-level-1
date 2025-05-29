@@ -29,5 +29,5 @@
 #     print("NOTHING")
 
 name = "PsychoKiller"
-nameO=len(name)
+nameO=reversed(name)
 print(nameO)
