@@ -1,1 +1,2 @@
 1-> Pip is a package manager in python ( pip install module_name ) & .py is the extension 
+2-> ............python first.py

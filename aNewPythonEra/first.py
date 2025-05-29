@@ -7,7 +7,7 @@ print("sum =", sum)
 a= int(input("enter your number= "))
 b= int(input(" enter your second number="))
 
-if a>b
- print("larger num is a:",a)
- else 
- print("larger number is b:",b)
+if a > b:
+  print("larger num is a:",a)
+else:
+  print("larger number is b:",b)
