@@ -29,5 +29,6 @@
 #     print("NOTHING")
 
 name = "PsychoKiller"
-nameO=''.join(reversed(name))
+# nameO=''.join(reversed(name))
+nameO= name[1:5] # starting from 1 to 4 excluding 5
 print(nameO)
