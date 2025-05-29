@@ -29,5 +29,5 @@
 #     print("NOTHING")
 
 name = "PsychoKiller"
-nameO=reversed(name)
+nameO=''.join(reversed(name))
 print(nameO)
