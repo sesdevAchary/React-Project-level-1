@@ -1,4 +1,7 @@
 1-> Pip is a package manager in python ( pip install module_name ) & .py is the extension 
+
 2-> ............python first.py
+
 3-> nameO=''.join(reversed(name)) {for string reversal}
-4-> str len for finding the length of a string 
+4-> nameO= name[1:5] # starting from 1 to 4 excluding 5
+
