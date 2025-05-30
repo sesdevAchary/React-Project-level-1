@@ -28,3 +28,9 @@
 a= [ "Ashwini" , "Rahul" , 0.55874, 54]
 print (a)
 print(type(a))
+
+
+
+a=  ("Ashwini" , "Rahul" , 0.55874, 54)
+print (a)
+print(type(a))
