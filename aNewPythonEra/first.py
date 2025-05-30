@@ -25,12 +25,22 @@
 # print(name.endswith("a")) #gives True or False
 
 
-a= [ "Ashwini" , "Rahul" , 0.55874, 54]
-print (a)
-print(type(a))
+# a= [ "Ashwini" , "Rahul" , 0.55874, 54]
+# print (a)
+# print(type(a))    ## List Type ##
 
 
 
-a=  ("Ashwini" , "Rahul" , 0.55874, 54)
-print (a)
-print(type(a))
+# a=  ("Ashwini" , "Rahul" , 0.55874, 54)
+# print (a)
+# print(type(a))         ## Tupple  Type ##
+
+
+
+
+marks = []
+# F = int(input( " mark in History:"))  one kind of input method orrrrrrr
+
+F=input("marks:")
+marks.append(F)
+print (marks)
