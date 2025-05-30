@@ -25,5 +25,6 @@
 # print(name.endswith("a")) #gives True or False
 
 
-Example= [ "Ashwini" , "Rahul" , 0.55874, 54]
-print (Example)
+a= [ "Ashwini" , "Rahul" , 0.55874, 54]
+print (a)
+print(type(a))

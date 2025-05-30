@@ -5,4 +5,5 @@
 3-> nameO=''.join(reversed(name)) {for string reversal}
 4-> nameO= name[1:5] # starting from 1 to 4 excluding 5
 5-> print(name.endswith("a")) {gives True or False}
+6-> List is collection of everything but mutable but a string is unchangeable 
 
