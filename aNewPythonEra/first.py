@@ -100,14 +100,21 @@
 #     print("you are disavowed")
     
     
-mark1= int(input("enter first mark"))
-mark2= int(input("enter second  mark"))
-mark3= int(input("enter third mark"))
+# mark1= int(input("enter first mark"))
+# mark2= int(input("enter second  mark"))
+# mark3= int(input("enter third mark"))
 
-percentage= 100 * ((mark1+mark2+mark3)/300)
-print("your percentage is :", percentage)
+# percentage= 100 * ((mark1+mark2+mark3)/300)
+# print("your percentage is :", percentage)
 
-if percentage>33:
-    print("Passed")
+# if percentage>33:
+#     print("Passed")
+# else:
+#     print("fail")
+
+name=input("enter your name")
+
+if len(name)>6:
+    print("more")
 else:
-    print("fail")
+    print("less")
