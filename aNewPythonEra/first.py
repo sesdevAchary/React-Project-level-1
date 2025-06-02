@@ -112,9 +112,20 @@
 # else:
 #     print("fail")
 
-name=input("enter your name")
+# name=input("enter your name")
 
-if len(name)>6:
-    print("more")
-else:
-    print("less")
+# if len(name)>6:
+#     print("more")
+# else:
+#     print("less")
+
+# for i in range (89 , 180):
+#     print(i)
+    
+# sum = 0
+# for i in range (100):
+#  sum+=i
+#  print(sum)
+ 
+ i=1
+ 
