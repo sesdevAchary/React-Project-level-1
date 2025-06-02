@@ -50,10 +50,33 @@
 
 
 
-words= {
-    "India":"Delhi",
-    "Hungary":"Budapest",
-    "Iran":"Tehran",}
+# words= {
+#     "India":"Delhi",
+#     "Hungary":"Budapest",
+#     "Iran":"Tehran",}
     
-word=input("enter the country name - ")
-print(words[word]) # it will print the capital of only the desired word country name 
+# word=input("enter the country name - ")
+# print(words[word]) # it will print the capital of only the desired word country name 
+
+
+
+marks= 56
+if(marks>=90): 
+
+ print("Conrgrats you secured Grade A")
+
+
+elif(marks>=80):
+ print("Congrats you secured Grade B")
+
+elif(marks>=600):
+
+ print("Congrats you secured Grade C")
+
+elif(marks>=50):
+
+ print("Congrats you secured Grade D")
+
+else:
+
+ print("you were disavowed")

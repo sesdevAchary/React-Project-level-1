@@ -7,3 +7,6 @@
 5-> print(name.endswith("a")) {gives True or False}
 6-> List is collection of everything but mutable but a string  and a tupple are  unchangeable 
 
+7-> DIctionary can be chanagable
+
+
