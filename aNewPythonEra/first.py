@@ -81,7 +81,7 @@
 
 #  print("you were disavowed")
 
-age = int(input(" enter the number "))
+# age = int(input(" enter the number "))
 
 #  if num > 0:
 #   if num %2 == 0:
@@ -93,9 +93,21 @@ age = int(input(" enter the number "))
 #     print("negative number ")
 
 
-has_id= True
-if age>=18 and has_id:
-    print("ready to proceed ")
-else:
-    print("you are disavowed")
+# has_id= True
+# if age>=18 and has_id:
+#     print("ready to proceed ")
+# else:
+#     print("you are disavowed")
     
+    
+mark1= int(input("enter first mark"))
+mark2= int(input("enter second  mark"))
+mark3= int(input("enter third mark"))
+
+percentage= 100 * ((mark1+mark2+mark3)/300)
+print("your percentage is :", percentage)
+
+if percentage>33:
+    print("Passed")
+else:
+    print("fail")

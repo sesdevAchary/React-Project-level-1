@@ -9,4 +9,6 @@
 
 7-> DIctionary can be chanagable
 
+8->  if and else sentence contains a colon at the last 
+
 
