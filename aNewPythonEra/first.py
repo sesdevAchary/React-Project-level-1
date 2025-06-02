@@ -126,6 +126,12 @@
 # for i in range (100):
 #  sum+=i
 #  print(sum)
+
+
+for i in range (3):
+     for j in range (3):
+        print(f"({i}, {j})", end=' ')   
+print()
+      
  
- i=1
  
