@@ -38,12 +38,22 @@
 
 
 
-marks = []
-# F = int(input( " mark in History:"))  one kind of input method orrrrrrr
+# marks = []
+# # F = int(input( " mark in History:"))  one kind of input method orrrrrrr
 
-F=input("marks:")
-marks.append(F)
-print (marks)
+# F=input("marks:")
+# marks.append(F)
+# print (marks)
 
-marks = [ 1,2,3,4,5]
-print(sum(marks))
+# marks = [ 1,2,3,4,5]
+# print(sum(marks))
+
+
+
+words= {
+    "India":"Delhi",
+    "Hungary":"Budapest",
+    "Iran":"Tehran",}
+    
+word=input("enter the country name - ")
+print(words[word]) # it will print the capital of only the desired word country name 
