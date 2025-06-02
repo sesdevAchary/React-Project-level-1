@@ -60,23 +60,42 @@
 
 
 
-marks= 56
-if(marks>=90): 
+# marks= int(input("enter your marks here"))
+# if(marks>=90): 
 
- print("Conrgrats you secured Grade A")
+#  print("Conrgrats you secured Grade A")
 
 
-elif(marks>=80):
- print("Congrats you secured Grade B")
+# elif(marks>=80):
+#  print("Congrats you secured Grade B")
 
-elif(marks>=600):
+# elif(marks>=600):
 
- print("Congrats you secured Grade C")
+#  print("Congrats you secured Grade C")
 
-elif(marks>=50):
+# elif(marks>=50):
 
- print("Congrats you secured Grade D")
+#  print("Congrats you secured Grade D")
 
+# else:
+
+#  print("you were disavowed")
+
+age = int(input(" enter the number "))
+
+#  if num > 0:
+#   if num %2 == 0:
+#    print("even number")
+#   else:
+#    print("odd number")
+
+#  else:
+#     print("negative number ")
+
+
+has_id= True
+if age>=18 and has_id:
+    print("ready to proceed ")
 else:
-
- print("you were disavowed")
+    print("you are disavowed")
+    
