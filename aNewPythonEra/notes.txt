@@ -11,4 +11,10 @@
 
 8->  if and else sentence contains a colon at the last 
 
+9-> By default, print() adds a newline (\n) at the end of whatever it prints. end = " " bloks it
+    hello 
+    world    //   hello world 
+
+
+
 
