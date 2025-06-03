@@ -135,7 +135,19 @@
       
  
  
-n = int(input("enter the number: "))
-for i in range(11):
-        print(f"{n}*{i}={n*i}")
+# n = int(input("enter the number: "))
+# for i in range(11):
+#         print(f"{n}*{i}={n*i}")
+#         #a formatted string (f-string).It evaluates expressions inside {} and replaces them with the values.#
    
+   
+   
+   
+n = int ( input("enter a number-> "))
+
+for i in range (n):
+        if(n%i==0):
+                print(" n is not a prime number")
+        else:
+         print("n is a prime number")
+ 
