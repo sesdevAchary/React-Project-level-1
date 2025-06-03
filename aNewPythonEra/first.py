@@ -143,11 +143,24 @@
    
    
    
-n = int ( input("enter a number-> "))
+# n = int ( input("enter a number-> "))
 
-for i in range (2,n):
-        if(n%i==0):
-                print(" n is not a prime number")
-                break;
-else:
-                print("n is a prime number")
+# for i in range (2,n):
+#         if(n%i==0):
+#                 print(" n is not a prime number")
+#                 break;
+# else:
+#                 print("n is a prime number")
+
+
+
+n= int(input("enter the number you want: "))
+for i in range (1,n+1):
+         if(i==1 or i==n):
+                 print("*"*n)
+         else:
+                 print("*", end="")
+                 print(" "*(n-2), end="")
+                 print("*", end="")
+        
+  
