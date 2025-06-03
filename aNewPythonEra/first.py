@@ -128,10 +128,14 @@
 #  print(sum)
 
 
-for i in range (3):
-     for j in range (3):
-        print(f"({i}, {j})", end=' ')   
-print()
+# for i in range (3):
+#      for j in range (3):
+#         print(f"({i}, {j})", end=' ')   
+# print()
       
  
  
+n = int(input("enter the number: "))
+for i in range(11):
+        print(f"{n}*{i}={n*i}")
+   
