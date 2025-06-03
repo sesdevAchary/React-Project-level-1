@@ -159,14 +159,25 @@
 #          if(i==1 or i==n):
 #                  print("*"*n)
 #          else:
-#                  print("*", end="")
-#                  print(" "*(n-2), end="")
-#                  print("*")
+#                  print("*", end="")        ***
+#                  print(" "*(n-2), end="")  * *
+#                  print("*")                ***
         
   
 
 
-n= int(input("enter the number you want: "))
-for i in range (1,n+1):
-        print(" "* (n-i),end=" ")
-        print("*"*(2*i-1))
+# n= int(input("enter the number you want: "))                   *
+# for i in range (1,n+1):                                       ***
+#         print(" "* (n-i),end=" ")                            *****
+#         print("*"*(2*i-1))
+
+
+
+
+def avg()
+   a= int(input("enter the number you want"))
+   b= int(input("enter the number you want"))
+   c= int(input("enter the number you want"))
+   average= (a+b+c)/3
+   print(avergae)
+avg()   
