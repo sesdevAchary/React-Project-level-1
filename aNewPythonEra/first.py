@@ -228,9 +228,18 @@
 
 
 
-def degree(f):
-   return 5*(f-32)/9
+# def degree(f):
+#    return 5*(f-32)/9
 
 
-d= int(input("enter the farenhite degree you want: "))
-print(d)
+# d= int(input("enter the farenhite degree you want: "))
+# print(d)
+
+def num():
+  print("value is 29")
+  print("value is 845")
+  return 7
+
+
+a=num()
+print(a)
