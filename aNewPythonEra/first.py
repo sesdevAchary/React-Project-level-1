@@ -174,10 +174,14 @@
 
 
 
-def avg():
-   a= int(input("enter the number you want"))
-   b= int(input("enter the number you want"))
-   c= int(input("enter the number you want"))
-   avergae= (a+b+c)/3
-   print(avergae)
-avg()   
+# def avg():
+#    a= int(input("enter the number you want"))
+#    b= int(input("enter the number you want"))
+#    c= int(input("enter the number you want"))
+#    avergae= (a+b+c)/3
+#    print(avergae)
+# avg()   
+
+
+
+
