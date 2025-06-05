@@ -193,5 +193,10 @@ def goodDay(name,ending):
 a=goodDay("som","Thanks")
 print(a)
 
+def getGreeting(name):
+    return f"Good Day {name}"
+
+msg = getGreeting("Som")
+print(msg)
 
 
