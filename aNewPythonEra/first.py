@@ -208,4 +208,4 @@ def factorial(n):
 
 
 n= int(input("enter the number you want "))
-print(f " the factorial of {n} is: {factorial(n)}")
+print(f" the factorial of {n} is: {factorial(n)}")
