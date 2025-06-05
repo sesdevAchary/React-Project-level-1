@@ -211,17 +211,26 @@
 # print(f" the factorial of {n} is: {factorial(n)}")
 
 
-def greatest(a,b,c):
- if (a>b and a>c):
-     return a
- elif(b>a and b>c):
-    return b
- elif(c>a and c>b):
-     return c
+# def greatest(a,b,c):
+#  if (a>b and a>c):
+#      return a
+#  elif(b>a and b>c):
+#     return b
+#  elif(c>a and c>b):
+#      return c
     
     
-a= int(input("enter the first number"))
-b= int(input("enter the second number"))
-c= int(input("enter the third number"))
+# a= int(input("enter the first number"))
+# b= int(input("enter the second number"))
+# c= int(input("enter the third number"))
 
-print("greatest number is ", greatest(a,b,c))
+# print("greatest number is ", greatest(a,b,c))
+
+
+
+def degree(f):
+   return 5*(f-32)/9
+
+
+d= int(input("enter the farenhite degree you want: "))
+print(d)
