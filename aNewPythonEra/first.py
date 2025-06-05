@@ -180,7 +180,15 @@
 #    c= int(input("enter the number you want"))
 #    avergae= (a+b+c)/3
 #    print(avergae)
-# avg()   
+#    return 2
+# a= avg()   
+
+
+def goodDay(name,ending):
+    print("Good Day",name/n)
+    print(ending)
+    
+goodDay("som","Thanks")
 
 
 
