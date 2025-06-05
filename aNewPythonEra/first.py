@@ -184,19 +184,28 @@
 # a= avg()   
 
 
-def goodDay(name,ending):
-    print("Good Day",name)
-    print(ending)
-    return 7
+# def goodDay(name,ending):
+#     print("Good Day",name)
+#     print(ending)
+#                           wihtout any return value 
 
     
-a=goodDay("som","Thanks")
-print(a)
+# a=goodDay("som","Thanks")
+# print(a)
 
-def getGreeting(name):
-    return f"Good Day {name}"
+# def getGreeting(name):
+#     return f"Good Day {name}"
 
-msg = getGreeting("Som")
-print(msg)
+# msg = getGreeting("Som")
+# # print(msg)                      with a retutn value .....
 
 
+def factorial(n):    
+ if(n==1 or n==0):
+  return 1
+ else:
+  return n*factorial(n-1)
+
+
+n= int(input("enter the number you want "))
+print(f " the factorial of {n} is: {factorial(n)}")
