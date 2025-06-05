@@ -197,15 +197,31 @@
 #     return f"Good Day {name}"
 
 # msg = getGreeting("Som")
-# # print(msg)                      with a retutn value .....
+# # print(msg)                      with a return value .....
 
 
-def factorial(n):    
- if(n==1 or n==0):
-  return 1
- else:
-  return n*factorial(n-1)
+# def factorial(n):    
+#  if(n==1 or n==0):
+#   return 1
+#  else:
+#   return n*factorial(n-1)
 
 
-n= int(input("enter the number you want "))
-print(f" the factorial of {n} is: {factorial(n)}")
+# n= int(input("enter the number you want "))
+# print(f" the factorial of {n} is: {factorial(n)}")
+
+
+def greatest(a,b,c):
+ if (a>b and a>c):
+     return a
+ elif(b>a and b>c):
+    return b
+ elif(c>a and c>b):
+     return c
+    
+    
+a= int(input("enter the first number"))
+b= int(input("enter the second number"))
+c= int(input("enter the third number"))
+
+print("greatest number is ", greatest(a,b,c))
