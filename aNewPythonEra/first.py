@@ -185,11 +185,13 @@
 
 
 def goodDay(name,ending):
-    print("Good Day",name/n)
+    print("Good Day",name)
     print(ending)
-    
-goodDay("som","Thanks")
+    return 7
 
+    
+a=goodDay("som","Thanks")
+print(a)
 
 
 
