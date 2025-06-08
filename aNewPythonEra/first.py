@@ -235,11 +235,19 @@
 # d= int(input("enter the farenhite degree you want: "))
 # print(d)
 
-def num():
-  print("value is 29")
-  print("value is 845")
-  return 7
+# def num():
+#   print("value is 29")
+#   print("value is 845")
+#   return 7
 
 
-a=num()
-print(a)
+# a=num()
+# print(a)
+
+
+def inc(inch):
+  return inch*2.54
+
+n=int(input("enter the number you want to coonvert:"))
+
+print(f"the cm value is {inc(n)}")
