@@ -17,6 +17,6 @@
 
     10-> Return value is given in a function to hold the value for a variable 
 
-
+11-> remove(array,"word") will remove a word
 
 

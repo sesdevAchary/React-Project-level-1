@@ -253,10 +253,23 @@
 # print(f"the cm value is {inc(n)}")
 
 
-def remove(p,word):
-  for item in p:
-    p.remove(word)
-    return p
+#   REMOVING A SINGLE ELEMENT ##
+
+# def remove(p,word):
+#   for item in p:
+#     p.remove(word)
+#     return p
   
-p = [ "Omm ", "Som","MMrunal","mm"]
-print(remove(p,"mm"))
+# p = [ "Omm ", "Som","MMrunal","mm"]
+# print(remove(p,"mm"))
+
+def remove(p,word):
+  n=[]
+  for item in p:
+    if( item == word):
+     n.append(item.replace(word,""))
+  return n
+     
+     
+p = ["Omm", "Som", "MMrunal", "mm"]
+print(remove(p, "mm"))
