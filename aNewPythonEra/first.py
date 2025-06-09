@@ -253,7 +253,10 @@
 # print(f"the cm value is {inc(n)}")
 
 
-def rem (p, word):
-  n=[]
+def remove(p,word):
   for item in p:
-  if not(item == word)
+    p.remove(word)
+    return p
+  
+p = [ "Omm ", "Som","MMrunal","mm"]
+print(remove(p,"mm"))
