@@ -245,9 +245,15 @@
 # print(a)
 
 
-def inc(inch):
-  return inch*2.54
+# def inc(inch):
+#   return inch*2.54
 
-n=int(input("enter the number you want to coonvert:"))
+# n=int(input("enter the number you want to coonvert:"))
 
-print(f"the cm value is {inc(n)}")
+# print(f"the cm value is {inc(n)}")
+
+
+def rem (p, word):
+  n=[]
+  for item in p:
+  if not(item == word)
