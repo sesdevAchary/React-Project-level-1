@@ -25,3 +25,7 @@ def add_expense();
         a, b = b, a + b
 
 fibonacci(10)
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("racecar"))  # True
