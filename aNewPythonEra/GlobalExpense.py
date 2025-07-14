@@ -63,3 +63,10 @@ url = 'https://example.com'
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 print(soup.title.text)
+# Write to file
+with open("example.txt", "w") as f:
+    f.write("Hello, world!")
+
+# Read from file
+with open("example.txt", "r") as f:
+    print(f.read())
