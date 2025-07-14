@@ -40,3 +40,8 @@ def calculator(a, b, op):
     if op == '/': return a / b
 
 print(calculator(10, 5, '*'))  # 50
+from collections import Counter
+
+text = "apple orange banana apple orange apple"
+words = text.split()
+print(Counter(words))
