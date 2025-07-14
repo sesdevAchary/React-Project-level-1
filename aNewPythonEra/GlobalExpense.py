@@ -56,3 +56,10 @@ from datetime import datetime
 
 now = datetime.now()
 print(now.strftime("%Y-%m-%d %H:%M:%S"))
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://example.com'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+print(soup.title.text)
