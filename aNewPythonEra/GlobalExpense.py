@@ -49,3 +49,6 @@ squares = [x**2 for x in range(10)]
 print(squares)
 squares = [x**2 for x in range(10)]
 print(squares)
+data = [(1, 3), (2, 2), (3, 1)]
+sorted_data = sorted(data, key=lambda x: x[1])
+print(sorted_data)
