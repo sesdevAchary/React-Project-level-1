@@ -10,3 +10,18 @@ def add_expense();
      # if user writes abc ip then it triggers the except bloack..
      category = input("Enter category (e.g., food, transport): ")
      date = input("Enter date (YYYY-MM-DD): ")
+     
+     
+     
+     
+     
+     
+     
+     
+     def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=' ')
+        a, b = b, a + b
+
+fibonacci(10)
