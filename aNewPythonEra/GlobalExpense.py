@@ -33,3 +33,10 @@ def is_prime(n):
     return n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))
 
 print(is_prime(29))  # True
+def calculator(a, b, op):
+    if op == '+': return a + b
+    if op == '-': return a - b
+    if op == '*': return a * b
+    if op == '/': return a / b
+
+print(calculator(10, 5, '*'))  # 50
