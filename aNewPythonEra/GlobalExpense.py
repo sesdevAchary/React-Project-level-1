@@ -95,3 +95,8 @@ def calculator(a, b, op):
     return "Invalid operator"
 
 print(calculator(10, 5, '*'))  # 50
+from collections import Counter
+
+text = "this is a test this is only a test"
+word_count = Counter(text.split())
+print(word_count)
