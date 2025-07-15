@@ -36,7 +36,7 @@ def total_expense():
 #Save the global expenses list to this file.#
 #This function converts your current in-memory list of expenses to a text format
 #Then writes that to a file so you can keep the data even after closing the program
-def load_from_file(filename="expenses.txt"):
+def save_to_file(filename="expenses.txt"):
 #It takes one argument: filename, which defaults to "expenses.txt" if nothing is provided.
   try:
     with open(filename, 'w') as file:
@@ -48,8 +48,22 @@ def load_from_file(filename="expenses.txt"):
  
      
      
-     
-     
+# Function to load expenses from a file
+def load_from_file(filename="expenses.txt"):
+    try:
+        with open(filename, 'r') as file:
+            for line in file:
+                date, category, amount = line.strip().split(',')
+                expenses.append({
+                    "date": date,
+                    "category": category,
+                    "amount": float(amount)
+                })
+        print("📂 Expenses loaded from file.")
+    except FileNotFoundError:
+        print("⚠️ No saved file found.")
+    except Exception as e:
+        print("❌ Error loading from file:", e)
      
      
      
