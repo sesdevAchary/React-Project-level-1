@@ -60,8 +60,11 @@ def load_from_file(filename="expenses.txt"):
           "category":catagory,
           "amount":float(amount)
         })
-        
-     
+    print("📂expenses loaded from file")   
+  except FileNotFoundError:
+    print("⚠️ No saved file found.")
+  except Exception as e:
+    print("❌ Error loading from file:", e)   
      
      
     
