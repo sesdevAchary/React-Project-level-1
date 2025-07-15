@@ -15,6 +15,15 @@ def add_expense():
      print("Expenses Added:")
    except ValueError:
      print("Invalid input. Amount must be a number.")
+     
+     
+# viewing the expense list
+def view_expense():
+  if not expense:
+    print(" no expense required ")
+    return
+  for i,expenses in enumerate(expenses,start=1):
+    print(f"{i}. {expenses['date']}-{expenses['catagory']}: ₹{expenses['amount']}")
  
      
      
