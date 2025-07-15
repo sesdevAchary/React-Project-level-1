@@ -48,22 +48,19 @@ def save_to_file(filename="expenses.txt"):
  
      
      
-# Function to load expenses from a file
+#Restore the expense list from a file to reuse again 
 def load_from_file(filename="expenses.txt"):
-    try:
-        with open(filename, 'r') as file:
-            for line in file:
-                date, category, amount = line.strip().split(',')
-                expenses.append({
-                    "date": date,
-                    "category": category,
-                    "amount": float(amount)
-                })
-        print("📂 Expenses loaded from file.")
-    except FileNotFoundError:
-        print("⚠️ No saved file found.")
-    except Exception as e:
-        print("❌ Error loading from file:", e)
+#load_from_file("myfile.txt")  # loads from another file
+  try:
+    with open(filename,'r') as file:
+      for line in file:
+        date,catagory,amount = line.strip().split(',')
+        expenses.append({
+          "date":date,
+          "category":catagory,
+          "amount":float(amount)
+        })
+        
      
      
      
