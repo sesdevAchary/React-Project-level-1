@@ -87,3 +87,11 @@ print(find_duplicates([1, 2, 2, 3, 4, 4, 5]))
 s = "hello"
 reversed_s = s[::-1]
 print(reversed_s)  # "olleh"
+def calculator(a, b, op):
+    if op == '+': return a + b
+    if op == '-': return a - b
+    if op == '*': return a * b
+    if op == '/': return a / b if b != 0 else "Error"
+    return "Invalid operator"
+
+print(calculator(10, 5, '*'))  # 50
