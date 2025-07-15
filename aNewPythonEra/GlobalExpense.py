@@ -24,6 +24,13 @@ def view_expense():
     return
   for i,expenses in enumerate(expenses,start=1):
     print(f"{i}. {expenses['date']}-{expenses['catagory']}: ₹{expenses['amount']}")
+    #enumerate() gives index and value after loopin through the list.
+    #i = 1, expense = {"amount": 50, "category": "Food", ...}
+    
+
+def total_expense():
+  total = sum(e['amount'] for e in expenses)
+  print(f" Total expense is : ₹{total}")
  
      
      
