@@ -68,3 +68,15 @@ def load_from_file(filename="expenses.txt"):
      
      
     
+    
+    
+    import time
+
+def countdown(seconds):
+    while seconds:
+        print(f"{seconds} seconds remaining")
+        time.sleep(1)
+        seconds -= 1
+    print("Time's up!")
+
+# countdown(5)
