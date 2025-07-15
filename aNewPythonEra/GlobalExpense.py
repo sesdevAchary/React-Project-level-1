@@ -31,6 +31,20 @@ def view_expense():
 def total_expense():
   total = sum(e['amount'] for e in expenses)
   print(f" Total expense is : ₹{total}")
+  
+  
+#Save the global expenses list to this file.#
+#This function converts your current in-memory list of expenses to a text format
+#Then writes that to a file so you can keep the data even after closing the program
+def load_from_file(filename="expenses.txt"):
+#It takes one argument: filename, which defaults to "expenses.txt" if nothing is provided.
+  try:
+    with open(filename, 'w') as file:
+      for e in expenses:
+        file.write(f"{e['date']},{e['catagory']},{e['amount']}\n")
+    print("💾 Expenses saved to file.")
+  except Exception as e:
+    print("❌ Error saving to file:", e)
  
      
      
