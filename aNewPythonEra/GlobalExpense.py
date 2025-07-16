@@ -72,4 +72,30 @@ def main():
   while True:
     print("\n--------------PERSONAL EXPENSE TRACKER--------------")
     print("1. Add Expenses ")
-    print("1. Add Expenses ")
+    print("2. view Expenses ")
+    print("3. Total Expenses ")
+    print("4. Save Expenses ")
+    print("5. Load Expenses ")
+    print("6. Exit ")
+    choice = input("👉 Choose an option (1-6): ")
+    
+    if choice == '1':
+      add_expense()
+    if choice == '2':
+      view_expense()
+    if choice == '3':
+      total_expense
+    if choice == '4':
+      save_to_file()
+    if choice == '5':
+      load_from_file()
+    if choice == '6':
+      print("👋 Exiting... Thank you for using the Expense Tracker!")
+      break
+    else:
+      print("❌ Invalid choice. Please enter a number from 1 to 6.")
+      
+# Run the program
+if __name__ == "__main__":
+    main()
+    
