@@ -67,36 +67,9 @@ def load_from_file(filename="expenses.txt"):
     print("❌ Error loading from file:", e)   
      
      
-    
-    
-    
-    import time
-
-def countdown(seconds):
-    while seconds:
-        print(f"{seconds} seconds remaining")
-        time.sleep(1)
-        seconds -= 1
-    print("Time's up!")
-
-# countdown(5)
-def find_duplicates(lst):
-    return list(set([x for x in lst if lst.count(x) > 1]))
-
-print(find_duplicates([1, 2, 2, 3, 4, 4, 5]))
-s = "hello"
-reversed_s = s[::-1]
-print(reversed_s)  # "olleh"
-def calculator(a, b, op):
-    if op == '+': return a + b
-    if op == '-': return a - b
-    if op == '*': return a * b
-    if op == '/': return a / b if b != 0 else "Error"
-    return "Invalid operator"
-
-print(calculator(10, 5, '*'))  # 50
-from collections import Counter
-
-text = "this is a test this is only a test"
-word_count = Counter(text.split())
-print(word_count)
+# main menu loop 
+def main():
+  while True:
+    print("\n--------------PERSONAL EXPENSE TRACKER--------------")
+    print("1. Add Expenses ")
+    print("1. Add Expenses ")
