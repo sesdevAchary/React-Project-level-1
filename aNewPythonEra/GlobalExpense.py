@@ -99,3 +99,16 @@ def main():
 if __name__ == "__main__":
     main()
     
+#Only run the main() function if this file is being run directly — not if it's being imported into another file
+
+#__name__:
+#A built-in special variable in Python.
+
+#When a Python file is executed directly, __name__ becomes "__main__".
+
+#When a Python file is imported into another Python file, __name__ becomes the name of the module (e.g., "expense_tracker").
+
+#if __name__ == "__main__":
+#This checks: “Am I running this file directly?”
+
+#If yes → call main()
