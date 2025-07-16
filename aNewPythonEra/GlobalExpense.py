@@ -192,3 +192,25 @@ while True:
     else:
         print(f"Correct! You guessed it in {tries} tries.")
         break
+events = {}
+
+def add_event():
+    date = input("Enter date (YYYY-MM-DD): ")
+    event = input("Enter event description: ")
+    events.setdefault(date, []).append(event)
+
+def view_events():
+    for date in sorted(events):
+        print(f"{date}:")
+        for event in events[date]:
+            print(f"  - {event}")
+
+while True:
+    print("\n1. Add Event\n2. View Events\n3. Exit")
+    choice = input("Choose: ")
+    if choice == "1":
+        add_event()
+    elif choice == "2":
+        view_events()
+    elif choice == "3":
+        break
