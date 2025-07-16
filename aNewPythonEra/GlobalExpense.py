@@ -71,6 +71,14 @@ def delete_expense():
   view_expense():
     try:
       index=int(input("enter the number of the input to delete"))
+      if 1<=index<=len(expenses):
+        removed=expenses.pop(index-1)
+        print(f"🗑️ Deleted: {removed['date']} - {removed['category']} - ₹{removed['amount']}")
+      else:
+        print("invalid index")
+    except ValueError:
+      print("❌ Please enter a valid number.")
+      
      
      
 # main menu loop 
@@ -82,8 +90,9 @@ def main():
     print("3. Total Expenses ")
     print("4. Save Expenses ")
     print("5. Load Expenses ")
-    print("6. Exit ")
-    choice = input("👉 Choose an option (1-6): ")
+    print("6. Delete Expenses ")
+    print("7. Exit ")
+    choice = input("👉 Choose an option (1-7): ")
     
     if choice == '1':
       add_expense()
@@ -95,7 +104,9 @@ def main():
       save_to_file()
     elif choice == '5':
       load_from_file()
-    elif choice == '6':
+    elif choice == '6':  
+      delete_expense()
+    elif choice == '7':
       print("👋 Exiting... Thank you for using the Expense Tracker!")
       break
     else:
