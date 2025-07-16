@@ -177,3 +177,18 @@ length = int(input("Password length: "))
 chars = string.ascii_letters + string.digits + string.punctuation
 password = ''.join(random.choice(chars) for _ in range(length))
 print("Generated password:", password)
+import random
+
+number = random.randint(1, 100)
+tries = 0
+
+while True:
+    guess = int(input("Guess a number (1-100): "))
+    tries += 1
+    if guess < number:
+        print("Too low!")
+    elif guess > number:
+        print("Too high!")
+    else:
+        print(f"Correct! You guessed it in {tries} tries.")
+        break
