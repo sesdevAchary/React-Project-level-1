@@ -10,7 +10,7 @@ def add_expense():
      # if user writes abc ip then it triggers the except bloack..
      category = input("Enter category (e.g., food, transport): ")
      date = input("Enter date (YYYY-MM-DD): ")
-     expenses.append({"amount":amount, "catagory":catagory,"date":date})
+     expenses.append({"amount":amount, "category": category,"date":date})
      # creatin a dictionary in key-val pair usin { }
      print("Expenses Added:")
    except ValueError:
@@ -19,18 +19,18 @@ def add_expense():
      
 # viewing the expense list
 def view_expense():
-  if not expense:
-    print(" no expense required ")
+  if not expenses:
+    print("⚠️ No expenses recorded.")
     return
-  for i,expenses in enumerate(expenses,start=1):
-    print(f"{i}. {expenses['date']}-{expenses['catagory']}: ₹{expenses['amount']}")
+  for i,expense in enumerate(expenses,start=1):
+    print(f"{i}. {expense['date']}-{expense['category']}: ₹{expense['amount']}")
     #enumerate() gives index and value after loopin through the list.
     #i = 1, expense = {"amount": 50, "category": "Food", ...}
     
 
 def total_expense():
   total = sum(e['amount'] for e in expenses)
-  print(f" Total expense is : ₹{total}")
+  print(f"💰 Total expense is: ₹{total:.2f}")
   
   
 #Save the global expenses list to this file.#
@@ -41,7 +41,7 @@ def save_to_file(filename="expenses.txt"):
   try:
     with open(filename, 'w') as file:
       for e in expenses:
-        file.write(f"{e['date']},{e['catagory']},{e['amount']}\n")
+        file.write(f"{e['date']},{e['category']},{e['amount']}\n")
     print("💾 Expenses saved to file.")
   except Exception as e:
     print("❌ Error saving to file:", e)
@@ -54,23 +54,29 @@ def load_from_file(filename="expenses.txt"):
   try:
     with open(filename,'r') as file:
       for line in file:
-        date,catagory,amount = line.strip().split(',')
+        date,category,amount = line.strip().split(',')
         expenses.append({
           "date":date,
-          "category":catagory,
+          "category":category,
           "amount":float(amount)
         })
     print("📂expenses loaded from file")   
   except FileNotFoundError:
-    print("⚠️ No saved file found.")
+    print("⚠️ No saved expense file found. Start by adding new expenses.")
   except Exception as e:
     print("❌ Error loading from file:", e)   
+    
+    
+def delete_expense():
+  view_expense():
+    try:
+      index=int(input("enter the number of the input to delete"))
      
      
 # main menu loop 
 def main():
   while True:
-    print("\n--------------PERSONAL EXPENSE TRACKER--------------")
+    print("\n====== PERSONAL EXPENSE TRACKER ======")
     print("1. Add Expenses ")
     print("2. view Expenses ")
     print("3. Total Expenses ")
@@ -81,15 +87,15 @@ def main():
     
     if choice == '1':
       add_expense()
-    if choice == '2':
+    elif choice == '2':
       view_expense()
-    if choice == '3':
-      total_expense
-    if choice == '4':
+    elif choice == '3':
+      total_expense()
+    elif choice == '4':
       save_to_file()
-    if choice == '5':
+    elif choice == '5':
       load_from_file()
-    if choice == '6':
+    elif choice == '6':
       print("👋 Exiting... Thank you for using the Expense Tracker!")
       break
     else:
@@ -99,7 +105,7 @@ def main():
 if __name__ == "__main__":
     main()
     
-#Only run the main() function if this file is being run directly — not if it's being imported into another file
+#Only run the main() function if this file is run directly — not if it's being imported into another file
 
 #__name__:
 #A built-in special variable in Python.
