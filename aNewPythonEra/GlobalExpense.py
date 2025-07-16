@@ -214,3 +214,32 @@ while True:
         view_events()
     elif choice == "3":
         break
+import csv
+
+def add_expense():
+    with open("expenses.csv", "a", newline="") as f:
+        writer = csv.writer(f)
+        amount = input("Amount: ")
+        category = input("Category: ")
+        date = input("Date (YYYY-MM-DD): ")
+        writer.writerow([amount, category, date])
+        print("Expense added!")
+
+def view_expenses():
+    try:
+        with open("expenses.csv", newline="") as f:
+            reader = csv.reader(f)
+            for row in reader:
+                print(f"₹{row[0]} - {row[1]} - {row[2]}")
+    except FileNotFoundError:
+        print("No expenses found.")
+
+while True:
+    print("\n1. Add Expense\n2. View Expenses\n3. Exit")
+    choice = input("Choose: ")
+    if choice == "1":
+        add_expense()
+    elif choice == "2":
+        view_expenses()
+    elif choice == "3":
+        break
