@@ -129,3 +129,44 @@ if __name__ == "__main__":
 #This checks: “Am I running this file directly?”
 
 #If yes → call main()
+
+
+
+
+
+
+
+
+tasks = []
+
+def add_task():
+    task = input("Enter a new task: ")
+    tasks.append(task)
+    print("Task added!")
+
+def view_tasks():
+    if not tasks:
+        print("No tasks yet.")
+    for i, task in enumerate(tasks, 1):
+        print(f"{i}. {task}")
+
+def delete_task():
+    view_tasks()
+    index = int(input("Enter task number to delete: ")) - 1
+    if 0 <= index < len(tasks):
+        removed = tasks.pop(index)
+        print(f"Deleted: {removed}")
+    else:
+        print("Invalid task number.")
+
+while True:
+    print("\n1. Add Task\n2. View Tasks\n3. Delete Task\n4. Exit")
+    choice = input("Choose: ")
+    if choice == "1":
+        add_task()
+    elif choice == "2":
+        view_tasks()
+    elif choice == "3":
+        delete_task()
+    elif choice == "4":
+        break
