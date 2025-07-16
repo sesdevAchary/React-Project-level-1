@@ -243,3 +243,18 @@ while True:
         view_expenses()
     elif choice == "3":
         break
+import os
+import shutil
+
+def organize(folder_path):
+    for filename in os.listdir(folder_path):
+        name, ext = os.path.splitext(filename)
+        ext = ext[1:]
+        if ext:
+            folder = os.path.join(folder_path, ext + "_files")
+            os.makedirs(folder, exist_ok=True)
+            shutil.move(os.path.join(folder_path, filename), os.path.join(folder, filename))
+
+folder_path = input("Enter folder path: ")
+organize(folder_path)
+print("Files organized!")
