@@ -160,7 +160,16 @@ def edit_expense():
         print("❌ Please enter a valid number.")
 
 
-
-
+def edit_expense():
+  view_expense()
+  try:
+    index= int(input("enter the number of track you want to edit from 1-7"))
+    if(1<=index<=len(expenses)):
+      expense = expenses[index-1]
+      print("Leave the input empty if you want to keep the current update")
+      new_amount=input(f"New amount(current:{expenses['amount']}):").strip()
+      new
+      
+    
 
 
