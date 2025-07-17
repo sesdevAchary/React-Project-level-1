@@ -225,3 +225,12 @@ length = int(input("Password length: "))
 characters = string.ascii_letters + string.digits + string.punctuation
 password = ''.join(random.choice(characters) for _ in range(length))
 print("Generated password:", password)
+import requests
+from bs4 import BeautifulSoup
+
+res = requests.get("https://www.bbc.com/news")
+soup = BeautifulSoup(res.text, 'html.parser')
+
+headlines = soup.find_all('h3')
+for h in headlines[:10]:
+    print(h.get_text(strip=True))
