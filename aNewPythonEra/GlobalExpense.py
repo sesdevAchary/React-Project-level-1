@@ -258,3 +258,16 @@ while True:
     else: break
 
 conn.close()
+def respond(msg):
+    if "hello" in msg.lower():
+        return "Hi there!"
+    elif "bye" in msg.lower():
+        return "Goodbye!"
+    else:
+        return "I don't understand."
+
+while True:
+    user = input("You: ")
+    if user.lower() == "exit":
+        break
+    print("Bot:", respond(user))
