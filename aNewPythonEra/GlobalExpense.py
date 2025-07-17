@@ -96,11 +96,11 @@ def edit_expense():
       if new_amount:
         #Checks if user typed something for the amount.if yes then update the value
         try:
-          expense['amount']=float(new_amount)
+          expense['amount']=float(new_amount)# updates the amount in the expense dictionary.
         except ValueError:
           print("❌ Invalid amount entered. Keeping previous value.")
       if new_category:
-        expense['category']=new_category
+        expense['category']=new_category#If the user entered a new category, update the value.
       if new_date:
         expense['date']=new_date #only updates date if user typed a new one.
         
@@ -170,3 +170,27 @@ if __name__ == "__main__":
     
 
 
+
+tasks = []
+
+def add_task():
+    task = input("Enter task: ")
+    tasks.append({"task": task, "done": False})
+
+def view_tasks():
+    for i, t in enumerate(tasks, 1):
+        status = "✓" if t["done"] else "✗"
+        print(f"{i}. {t['task']} [{status}]")
+
+def mark_done():
+    view_tasks()
+    index = int(input("Enter task number to mark as done: ")) - 1
+    tasks[index]["done"] = True
+
+while True:
+    print("\n1.Add 2.View 3.Done 4.Exit")
+    choice = input("Choice: ")
+    if choice == "1": add_task()
+    elif choice == "2": view_tasks()
+    elif choice == "3": mark_done()
+    elif choice == "4": break
