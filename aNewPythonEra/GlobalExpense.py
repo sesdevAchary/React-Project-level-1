@@ -89,10 +89,12 @@ def edit_expense():
       print("Leave the input empty if you want to keep the current update")
       
       new_amount=input(f"New amount(current:{expense['amount']}):").strip()
+      #New amount(current:80.0):90
       new_category=input(f"new category (current:{expense['category']}):").strip()
       new_date=input(f"new date (current:{expense['date']}):").strip()
       
       if new_amount:
+        #Checks if user typed something for the amount.if yes then update the value
         try:
           expense['amount']=float(new_amount)
         except ValueError:
@@ -120,7 +122,7 @@ def main():
     print("4. Save Expenses ")
     print("5. Load Expenses ")
     print("6. Delete Expenses ")
-    print("7. Delete Expenses ")
+    print("7. Edit Expenses ")
     print("8. Exit ")
     choice = input("👉 Choose an option (1-8): ")
     
