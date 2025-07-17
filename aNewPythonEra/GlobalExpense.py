@@ -133,42 +133,33 @@ if __name__ == "__main__":
 
 # Edit an expense by index
 def edit_expense():
-    view_expense()
-    try:
-        index = int(input("Enter the number of the expense to edit: "))
-        if 1 <= index <= len(expenses):
-            expense = expenses[index - 1]
-            print("Leave input empty to keep current value.")
-            new_amount = input(f"New amount (current: ₹{expense['amount']}): ").strip()
-            new_category = input(f"New category (current: {expense['category']}): ").strip()
-            new_date = input(f"New date (current: {expense['date']}): ").strip()
-
-            if new_amount:
-                try:
-                    expense['amount'] = float(new_amount)
-                except ValueError:
-                    print("❌ Invalid amount entered. Keeping previous value.")
-            if new_category:
-                expense['category'] = new_category
-            if new_date:
-                expense['date'] = new_date
-
-            print("✅ Expense updated.")
-        else:
-            print("❌ Invalid index.")
-    except ValueError:
-        print("❌ Please enter a valid number.")
-
-
-def edit_expense():
   view_expense()
   try:
     index= int(input("enter the number of track you want to edit from 1-7"))
     if(1<=index<=len(expenses)):
       expense = expenses[index-1]
       print("Leave the input empty if you want to keep the current update")
-      new_amount=input(f"New amount(current:{expenses['amount']}):").strip()
-      new
+      
+      new_amount=input(f"New amount(current:{expense['amount']}):").strip()
+      new_category=input(f"new category (current:{expense['category']}):").strip()
+      new_date=input(f"new date (current:{expense['date']}):").strip()
+      
+      if new_amount:
+        try:
+          expense['amount']=float(new_amount)
+        except ValueError:
+          print("❌ Invalid amount entered. Keeping previous value.")
+      if new_category:
+        expense['category']=new_category
+      if new_date:
+        expense['date']=new_date #only updates date if user typed a new one.
+        
+      print(" ✅ Expenses are updated")
+    else:
+      print("❌ Invalid index.")
+  except ValueError: 
+    print("❌ not a valid number, Please enter a valid number. ")
+
       
     
 
