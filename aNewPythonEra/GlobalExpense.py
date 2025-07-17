@@ -194,3 +194,12 @@ while True:
     elif choice == "2": view_tasks()
     elif choice == "3": mark_done()
     elif choice == "4": break
+from forex_python.converter import CurrencyRates
+c = CurrencyRates()
+
+amount = float(input("Amount: "))
+from_curr = input("From (e.g., USD): ").upper()
+to_curr = input("To (e.g., INR): ").upper()
+
+result = c.convert(from_curr, to_curr, amount)
+print(f"{amount} {from_curr} = {result:.2f} {to_curr}")
