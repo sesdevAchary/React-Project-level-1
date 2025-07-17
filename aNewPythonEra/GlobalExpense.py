@@ -68,72 +68,20 @@ def load_from_file(filename="expenses.txt"):
     
     
 def delete_expense():
-  view_expense():
-    try:
+  view_expense()
+  try:
       index=int(input("enter the number of the input to delete"))
       if 1<=index<=len(expenses):
         removed=expenses.pop(index-1)
         print(f"🗑️ Deleted: {removed['date']} - {removed['category']} - ₹{removed['amount']}")
       else:
         print("invalid index")
-    except ValueError:
+  except ValueError:
       print("❌ Please enter a valid number.")
       
-     
-     
-# main menu loop 
-def main():
-  while True:
-    print("\n====== PERSONAL EXPENSE TRACKER ======")
-    print("1. Add Expenses ")
-    print("2. view Expenses ")
-    print("3. Total Expenses ")
-    print("4. Save Expenses ")
-    print("5. Load Expenses ")
-    print("6. Delete Expenses ")
-    print("7. Exit ")
-    choice = input("👉 Choose an option (1-7): ")
-    
-    if choice == '1':
-      add_expense()
-    elif choice == '2':
-      view_expense()
-    elif choice == '3':
-      total_expense()
-    elif choice == '4':
-      save_to_file()
-    elif choice == '5':
-      load_from_file()
-    elif choice == '6':  
-      delete_expense()
-    elif choice == '7':
-      print("👋 Exiting... Thank you for using the Expense Tracker!")
-      break
-    else:
-      print("❌ Invalid choice. Please enter a number from 1 to 6.")
-      
-# Run the program
-if __name__ == "__main__":
-    main()
-    
-#Only run the main() function if this file is run directly — not if it's being imported into another file
-
-#__name__:
-#A built-in special variable in Python.
-
-#When a Python file is executed directly, __name__ becomes "__main__".
-
-#When a Python file is imported into another Python file, __name__ becomes the name of the module (e.g., "expense_tracker").
-
-#if __name__ == "__main__":
-#This checks: “Am I running this file directly?”
-
-#If yes → call main()
-
-
-# Edit an expense by index
+ # Edit an expense by index
 def edit_expense():
-  view_expense()
+  view_expense()  ## Show current expenses
   try:
     index= int(input("enter the number of track you want to edit from 1-7"))
     if(1<=index<=len(expenses)):
@@ -161,6 +109,62 @@ def edit_expense():
     print("❌ not a valid number, Please enter a valid number. ")
 
       
+     
+# main menu loop 
+def main():
+  while True:
+    print("\n====== PERSONAL EXPENSE TRACKER ======")
+    print("1. Add Expenses ")
+    print("2. view Expenses ")
+    print("3. Total Expenses ")
+    print("4. Save Expenses ")
+    print("5. Load Expenses ")
+    print("6. Delete Expenses ")
+    print("7. Delete Expenses ")
+    print("8. Exit ")
+    choice = input("👉 Choose an option (1-8): ")
+    
+    if choice == '1':
+      add_expense()
+    elif choice == '2':
+      view_expense()
+    elif choice == '3':
+      total_expense()
+    elif choice == '4':
+      save_to_file()
+    elif choice == '5':
+      load_from_file()
+    elif choice == '6':  
+      delete_expense()
+    elif choice == '7':
+      edit_expense()  
+      
+    elif choice == '8':
+      print("👋 Exiting... Thank you for using the Expense Tracker!")
+      break
+    else:
+      print("❌ Invalid choice. Please enter a number from 1 to 8.")
+      
+# Run the program
+if __name__ == "__main__":
+    main()
+    
+#Only run the main() function if this file is run directly — not if it's being imported into another file
+
+#__name__:
+#A built-in special variable in Python.
+
+#When a Python file is executed directly, __name__ becomes "__main__".
+
+#When a Python file is imported into another Python file, __name__ becomes the name of the module (e.g., "expense_tracker").
+
+#if __name__ == "__main__":
+#This checks: “Am I running this file directly?”
+
+#If yes → call main()
+
+
+
     
 
 
