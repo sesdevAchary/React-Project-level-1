@@ -203,3 +203,18 @@ to_curr = input("To (e.g., INR): ").upper()
 
 result = c.convert(from_curr, to_curr, amount)
 print(f"{amount} {from_curr} = {result:.2f} {to_curr}")
+import random
+
+number = random.randint(1, 100)
+attempts = 0
+
+while True:
+    guess = int(input("Guess a number (1-100): "))
+    attempts += 1
+    if guess < number:
+        print("Too low!")
+    elif guess > number:
+        print("Too high!")
+    else:
+        print(f"Correct! Guessed in {attempts} attempts.")
+        break
