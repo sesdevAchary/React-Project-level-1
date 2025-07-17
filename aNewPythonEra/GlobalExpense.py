@@ -131,141 +131,36 @@ if __name__ == "__main__":
 #If yes → call main()
 
 
-
-
-
-
-
-
-tasks = []
-
-def add_task():
-    task = input("Enter a new task: ")
-    tasks.append(task)
-    print("Task added!")
-
-def view_tasks():
-    if not tasks:
-        print("No tasks yet.")
-    for i, task in enumerate(tasks, 1):
-        print(f"{i}. {task}")
-
-def delete_task():
-    view_tasks()
-    index = int(input("Enter task number to delete: ")) - 1
-    if 0 <= index < len(tasks):
-        removed = tasks.pop(index)
-        print(f"Deleted: {removed}")
-    else:
-        print("Invalid task number.")
-
-while True:
-    print("\n1. Add Task\n2. View Tasks\n3. Delete Task\n4. Exit")
-    choice = input("Choose: ")
-    if choice == "1":
-        add_task()
-    elif choice == "2":
-        view_tasks()
-    elif choice == "3":
-        delete_task()
-    elif choice == "4":
-        break
-import random
-import string
-
-length = int(input("Password length: "))
-chars = string.ascii_letters + string.digits + string.punctuation
-password = ''.join(random.choice(chars) for _ in range(length))
-print("Generated password:", password)
-import random
-
-number = random.randint(1, 100)
-tries = 0
-
-while True:
-    guess = int(input("Guess a number (1-100): "))
-    tries += 1
-    if guess < number:
-        print("Too low!")
-    elif guess > number:
-        print("Too high!")
-    else:
-        print(f"Correct! You guessed it in {tries} tries.")
-        break
-events = {}
-
-def add_event():
-    date = input("Enter date (YYYY-MM-DD): ")
-    event = input("Enter event description: ")
-    events.setdefault(date, []).append(event)
-
-def view_events():
-    for date in sorted(events):
-        print(f"{date}:")
-        for event in events[date]:
-            print(f"  - {event}")
-
-while True:
-    print("\n1. Add Event\n2. View Events\n3. Exit")
-    choice = input("Choose: ")
-    if choice == "1":
-        add_event()
-    elif choice == "2":
-        view_events()
-    elif choice == "3":
-        break
-import csv
-
-def add_expense():
-    with open("expenses.csv", "a", newline="") as f:
-        writer = csv.writer(f)
-        amount = input("Amount: ")
-        category = input("Category: ")
-        date = input("Date (YYYY-MM-DD): ")
-        writer.writerow([amount, category, date])
-        print("Expense added!")
-
-def view_expenses():
+# Edit an expense by index
+def edit_expense():
+    view_expense()
     try:
-        with open("expenses.csv", newline="") as f:
-            reader = csv.reader(f)
-            for row in reader:
-                print(f"₹{row[0]} - {row[1]} - {row[2]}")
-    except FileNotFoundError:
-        print("No expenses found.")
+        index = int(input("Enter the number of the expense to edit: "))
+        if 1 <= index <= len(expenses):
+            expense = expenses[index - 1]
+            print("Leave input empty to keep current value.")
+            new_amount = input(f"New amount (current: ₹{expense['amount']}): ").strip()
+            new_category = input(f"New category (current: {expense['category']}): ").strip()
+            new_date = input(f"New date (current: {expense['date']}): ").strip()
 
-while True:
-    print("\n1. Add Expense\n2. View Expenses\n3. Exit")
-    choice = input("Choose: ")
-    if choice == "1":
-        add_expense()
-    elif choice == "2":
-        view_expenses()
-    elif choice == "3":
-        break
-import os
-import shutil
+            if new_amount:
+                try:
+                    expense['amount'] = float(new_amount)
+                except ValueError:
+                    print("❌ Invalid amount entered. Keeping previous value.")
+            if new_category:
+                expense['category'] = new_category
+            if new_date:
+                expense['date'] = new_date
 
-def organize(folder_path):
-    for filename in os.listdir(folder_path):
-        name, ext = os.path.splitext(filename)
-        ext = ext[1:]
-        if ext:
-            folder = os.path.join(folder_path, ext + "_files")
-            os.makedirs(folder, exist_ok=True)
-            shutil.move(os.path.join(folder_path, filename), os.path.join(folder, filename))
+            print("✅ Expense updated.")
+        else:
+            print("❌ Invalid index.")
+    except ValueError:
+        print("❌ Please enter a valid number.")
 
-folder_path = input("Enter folder path: ")
-organize(folder_path)
-print("Files organized!")
-from PyPDF2 import PdfMerger
 
-merger = PdfMerger()
-files = ["file1.pdf", "file2.pdf"]  # Replace with your PDF filenames
 
-for file in files:
-    merger.append(file)
 
-merger.write("merged.pdf")
-merger.close()
-print("PDFs merged!")
+
+
