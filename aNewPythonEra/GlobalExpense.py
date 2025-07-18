@@ -309,11 +309,39 @@ def total_expense(self):
     total = sum(e['amount'] for e in self.expense)
     print(f"💰 Total expenses: ₹{total:.2f}")
     
-def save_to_file(self ,filename="expense.txt"):
+def save_to_file(self ,filename="expense.txt"): #optionally accepts a filename 
     try:
         with open(filename,'w') as file:
             for e in self.expense:
                 file.write(f"{e['date']},{e['category']},{e['amount']}\n")
         print("💾 Expenses saved to file.")
-    
+    except Exception as e:
+        print("❌ Error saving to file:", e) 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        import cv2
+
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+cap = cv2.VideoCapture(0)
+
+while True:
+    _, frame = cap.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    for (x,y,w,h) in faces:
+        cv2.rectangle(frame, (x,y), (x+w, y+h), (255,0,0), 2)
+    cv2.imshow('Face Detector', frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
         
