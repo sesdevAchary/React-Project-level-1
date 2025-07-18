@@ -274,29 +274,25 @@
 
 
 
+
+
 class Track_Expense:
-  def_init_(self):
-    self.expense = []
-#__init__: Special method that runs when an object is created.
-# self.expenses: A list to hold all expense entries 
+    def __init__(self):  #cons->__init__: Special method that runs when an object is created.
+        self.expense = []
 
-#adding the expense#
-def add_expense(self):
-  try:
-    
-    amount = float(input("Enter the expense amount:-> "))
-    category = input("Enter the category(e.g.-Food,Transport):-> ")
-    date = input("Enter the date 📅(DD-MM-YYYY format):-> ")
-    self.expense.append(
-      {
-      "amount": amount,
-      "category": category,
-      "date":date
-      }
-    )
-    
-    print("✅ Expense added!")
-  except ValueError:
-    print("❌ Invalid amount. Please enter a number.")
-
-  
+    def add_expense(self):  ##adding the expense# 
+      #self refers to the current instance of the class. access to the instance’s variables
+      #Adds the new expense as a dictionary to the list self.expenses,
+      # which is an instance variable initialized in the class (likely in __init__()).
+        try:
+            amount = float(input("Enter the expense amount:-> "))
+            category = input("Enter the category (e.g.-Food, Transport):-> ")
+            date = input("Enter the date 📅 (DD-MM-YYYY format):-> ")
+            self.expense.append({
+                "amount": amount,
+                "category": category,
+                "date": date
+            })
+            print("✅ Expense added!")
+        except ValueError:
+            print("❌ Invalid amount. Please enter a number.")
