@@ -389,5 +389,17 @@ soup = BeautifulSoup(res.text, 'html.parser')
 headlines = soup.find_all('h3')
 for h in headlines[:10]:
     print(h.get_text(strip=True))
+import requests
+
+city = input("Enter city: ")
+api_key = "your_api_key_here"  # Get it from https://openweathermap.org/api
+url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+
+response = requests.get(url).json()
+if response.get("main"):
+    print(f"Temperature: {response['main']['temp']}°C")
+    print(f"Weather: {response['weather'][0]['description']}")
+else:
+    print("City not found!")
 
         
