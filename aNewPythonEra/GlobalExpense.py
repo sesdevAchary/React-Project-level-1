@@ -380,5 +380,14 @@ while True:
     else: break
 
 conn.close()
+import requests
+from bs4 import BeautifulSoup
+
+res = requests.get("https://www.bbc.com/news")
+soup = BeautifulSoup(res.text, 'html.parser')
+
+headlines = soup.find_all('h3')
+for h in headlines[:10]:
+    print(h.get_text(strip=True))
 
         
