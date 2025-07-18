@@ -296,3 +296,12 @@ class Track_Expense:
             print("✅ Expense added!")
         except ValueError:
             print("❌ Invalid amount. Please enter a number.")
+
+def view_expense(self):
+    if not self.expense:
+        print("📭 No expenses recorded.")
+        return
+    print("\n📋 Expense History:")
+    for i,e in enumerate(self.expense,start =1):
+        print(f"{i}->{e['date']},{e['category']}- ₹{e['amount']}:.3f")
+        
