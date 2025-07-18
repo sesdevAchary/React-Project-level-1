@@ -281,3 +281,22 @@ class Track_Expense:
 # self.expenses: A list to hold all expense entries 
 
 #adding the expense#
+def add_expense(self):
+  try:
+    
+    amount = float(input("Enter the expense amount:-> "))
+    category = input("Enter the category(e.g.-Food,Transport):-> ")
+    date = input("Enter the date 📅(DD-MM-YYYY format):-> ")
+    self.expense.append(
+      {
+      "amount": amount,
+      "category": category,
+      "date":date
+      }
+    )
+    
+    print("✅ Expense added!")
+  except ValueError:
+    print("❌ Invalid amount. Please enter a number.")
+
+  
