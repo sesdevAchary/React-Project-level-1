@@ -298,10 +298,15 @@ class Track_Expense:
             print("❌ Invalid amount. Please enter a number.")
 
 def view_expense(self):
-    if not self.expense:
+    if not self.expense: #checks if the list is empty.
         print("📭 No expenses recorded.")
         return
     print("\n📋 Expense History:")
-    for i,e in enumerate(self.expense,start =1):
+    for i,e in enumerate(self.expense,start =1): # index e-item value in enumerate
         print(f"{i}->{e['date']},{e['category']}- ₹{e['amount']}:.3f")
+        
+def total_expense(self):
+    total = sum(e['amount'] for e in self.expense)
+    print(f"💰 Total expenses: ₹{total:.2f}")
+    
         
