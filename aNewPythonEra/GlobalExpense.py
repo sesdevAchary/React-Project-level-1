@@ -356,5 +356,29 @@ while True:
     if user.lower() == "exit":
         break
     print("Bot:", respond(user))
+import sqlite3
+
+conn = sqlite3.connect("expenses.db")
+c = conn.cursor()
+c.execute("CREATE TABLE IF NOT EXISTS expenses (amount REAL, category TEXT, date TEXT)")
+
+def add_expense():
+    a = float(input("Amount: "))
+    cat = input("Category: ")
+    date = input("Date (YYYY-MM-DD): ")
+    c.execute("INSERT INTO expenses VALUES (?, ?, ?)", (a, cat, date))
+    conn.commit()
+
+def view():
+    for row in c.execute("SELECT * FROM expenses"):
+        print(row)
+
+while True:
+    ch = input("\n1.Add 2.View 3.Exit\nChoice: ")
+    if ch == "1": add_expense()
+    elif ch == "2": view()
+    else: break
+
+conn.close()
 
         
