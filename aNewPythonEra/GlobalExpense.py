@@ -309,4 +309,11 @@ def total_expense(self):
     total = sum(e['amount'] for e in self.expense)
     print(f"💰 Total expenses: ₹{total:.2f}")
     
+def save_to_file(self ,filename="expense.txt"):
+    try:
+        with open(filename,'w') as file:
+            for e in self.expense:
+                file.write(f"{e['date']},{e['category']},{e['amount']}\n")
+        print("💾 Expenses saved to file.")
+    
         
