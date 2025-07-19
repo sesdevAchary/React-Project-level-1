@@ -364,4 +364,11 @@ def main(self)  :
             else:
                 print("❌ Invalid choice. Please enter a number from 1 to 6.")
         
-     
+#running the main menu
+if __name__=="__main__":
+    tracker = Track_Expense() #object creation
+    tracker.menu()
+    
+#	Ensures the main program runs only when the script is executed directly
+    
+    
