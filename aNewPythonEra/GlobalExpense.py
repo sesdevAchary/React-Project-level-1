@@ -334,6 +334,29 @@ def load_from_file(self,filename="expense.txt"):
     except FileNotFoundError:
         print("⚠️ No saved file found.")
     except Exception as e:
-        print("❌ Error loading from file:", e)  
+        print("❌ Error loading from file:", e)
+def main(self)  :
+    while true:
+            print("\n====== Personal Expense Tracker ======")
+            print("1. Add Expense")
+            print("2. View Expenses")
+            print("3. Show Total")
+            print("4. Save Expenses")
+            print("5. Load Expenses")
+            print("6. Exit")
+            
+            
+            choice = input("👉 Choose an option (1-6): ")
+             
+            if choice == '1':
+                self.add_expense()
+            elif choice == '2':
+                self.view_expense()
+            elif choice == '3':
+                self.total_expense()
+            elif choice == '4':
+                self.save_to_file()
+            elif choice == '5':
+                self.load_from_file()
         
         
