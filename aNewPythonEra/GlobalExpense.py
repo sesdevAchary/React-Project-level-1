@@ -297,32 +297,37 @@ class Track_Expense:
         except ValueError:
             print("❌ Invalid amount. Please enter a number.")
 
-def view_expense(self):
-    if not self.expense: #checks if the list is empty.
-        print("📭 No expenses recorded.")
-        return
-    print("\n📋 Expense History:")
-    for i,e in enumerate(self.expense,start =1): # index e-item value in enumerate
-        print(f"{i}->{e['date']},{e['category']}- ₹{e['amount']}:.3f")
+    def view_expense(self):
+        if not self.expense: #checks if the list is empty.
+            print("📭 No expenses recorded.")
+            return
         
-def total_expense(self):
-    total = sum(e['amount'] for e in self.expense)
+        print("\n📋 Expense History:")
+        for i,e in enumerate(self.expense,start =1): # index e-item value in enumerate
+            print(f"{i}->{e['date']},{e['category']}- ₹{e['amount']}:.2f")
+    
+        
+    def total_expense(self):
+        total = sum(e['amount'] for e in self.expense)
     print(f"💰 Total expenses: ₹{total:.2f}")
     
-def save_to_file(self ,filename="expense.txt"): #optionally accepts a filename 
-    try:
-        with open(filename,'w') as file:
+    
+    def save_to_file(self ,filename="expense.txt"): #optionally accepts a filename 
+        try:
+          with open(filename,'w') as file:
             for e in self.expense:
                 file.write(f"{e['date']},{e['category']},{e['amount']}\n")
-        print("💾 Expenses saved to file.")
-    except Exception as e:
-        print("❌ Error saving to file:", e) 
+          print("💾 Expenses saved to file.")
+        except Exception as e:
+            print("❌ Error saving to file:", e) 
+    
         
         
-def load_from_file(self,filename="expense.txt"):
-    try:
-        with open (filename,'r') as file:
-            date,category,amount = line.strip().spllit(',')
+    def load_from_file(self,filename="expense.txt"):
+        try:
+          with open (filename,'r') as file:
+            for line in file:
+                 date,category,amount = line.strip().split(',')
             self.expense.append(
                 {
                     "date":date,
@@ -330,13 +335,16 @@ def load_from_file(self,filename="expense.txt"):
                     "amount":float(amount)
                 }
             )
+                
+           
         print("📂 Expenses loaded from file.")
     except FileNotFoundError:
         print("⚠️ No saved file found.")
     except Exception as e:
         print("❌ Error loading from file:", e)
-def main(self)  :
-    while true:
+    
+   def main(self):
+       while true:
             print("\n====== Personal Expense Tracker ======")
             print("1. Add Expense")
             print("2. View Expenses")
@@ -363,12 +371,99 @@ def main(self)  :
                 break
             else:
                 print("❌ Invalid choice. Please enter a number from 1 to 6.")
+    
         
 #running the main menu
 if __name__=="__main__":
     tracker = Track_Expense() #object creation
-    tracker.menu()
+    tracker.main()
     
 #	Ensures the main program runs only when the script is executed directly
     
-    
+class Track_Expense:
+    def __init__(self):
+        self.expense = []
+
+    def add_expense(self):
+        try:
+            amount = float(input("Enter the expense amount:-> "))
+            category = input("Enter the category (e.g.-Food, Transport):-> ")
+            date = input("Enter the date 📅 (DD-MM-YYYY format):-> ")
+            self.expense.append({
+                "amount": amount,
+                "category": category,
+                "date": date
+            })
+            print("✅ Expense added!")
+        except ValueError:
+            print("❌ Invalid amount. Please enter a number.")
+
+    def view_expense(self):
+        if not self.expense:
+            print("📭 No expenses recorded.")
+            return
+        print("\n📋 Expense History:")
+        for i, e in enumerate(self.expense, start=1):
+            print(f"{i} -> {e['date']}, {e['category']} - ₹{e['amount']:.2f}")
+
+    def total_expense(self):
+        total = sum(e['amount'] for e in self.expense)
+        print(f"💰 Total expenses: ₹{total:.2f}")
+
+    def save_to_file(self, filename="expense.txt"):
+        try:
+            with open(filename, 'w') as file:
+                for e in self.expense:
+                    file.write(f"{e['date']},{e['category']},{e['amount']}\n")
+            print("💾 Expenses saved to file.")
+        except Exception as e:
+            print("❌ Error saving to file:", e)
+
+    def load_from_file(self, filename="expense.txt"):
+        try:
+            with open(filename, 'r') as file:
+                for line in file:
+                    date, category, amount = line.strip().split(',')
+                    self.expense.append({
+                        "date": date,
+                        "category": category,
+                        "amount": float(amount)
+                    })
+            print("📂 Expenses loaded from file.")
+        except FileNotFoundError:
+            print("⚠️ No saved file found.")
+        except Exception as e:
+            print("❌ Error loading from file:", e)
+
+    def main(self):
+        while True:
+            print("\n====== Personal Expense Tracker ======")
+            print("1. Add Expense")
+            print("2. View Expenses")
+            print("3. Show Total")
+            print("4. Save Expenses")
+            print("5. Load Expenses")
+            print("6. Exit")
+
+            choice = input("👉 Choose an option (1-6): ")
+
+            if choice == '1':
+                self.add_expense()
+            elif choice == '2':
+                self.view_expense()
+            elif choice == '3':
+                self.total_expense()
+            elif choice == '4':
+                self.save_to_file()
+            elif choice == '5':
+                self.load_from_file()
+            elif choice == '6':
+                print("👋 Exiting... Thank you for using the Expense Tracker!")
+                break
+            else:
+                print("❌ Invalid choice. Please enter a number from 1 to 6.")
+
+# Run the main menu only when script is executed directly
+if __name__ == "__main__":
+    tracker = Track_Expense()
+    tracker.main()
