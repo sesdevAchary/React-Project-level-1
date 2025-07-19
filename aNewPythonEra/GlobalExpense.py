@@ -358,5 +358,10 @@ def main(self)  :
                 self.save_to_file()
             elif choice == '5':
                 self.load_from_file()
+            elif choice == '6':
+                print("👋 Exiting... Thank you for using the Expense Tracker!")
+                break
+            else:
+                print("❌ Invalid choice. Please enter a number from 1 to 6.")
         
-        
+     
