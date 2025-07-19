@@ -319,99 +319,21 @@ def save_to_file(self ,filename="expense.txt"): #optionally accepts a filename
         print("❌ Error saving to file:", e) 
         
         
+def load_from_file(self,filename="expense.txt"):
+    try:
+        with open (filename,'r') as file:
+            date,category,amount = line.strip().spllit(',')
+            self.expense.append(
+                {
+                    "date":date,
+                    "category":category,
+                    "amount":float(amount)
+                }
+            )
+        print("📂 Expenses loaded from file.")
+    except FileNotFoundError:
+        print("⚠️ No saved file found.")
+    except Exception as e:
+        print("❌ Error loading from file:", e)  
         
-        
-        
-        
-        
-        
-        
-        import cv2
-
-face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-cap = cv2.VideoCapture(0)
-
-while True:
-    _, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-    for (x,y,w,h) in faces:
-        cv2.rectangle(frame, (x,y), (x+w, y+h), (255,0,0), 2)
-    cv2.imshow('Face Detector', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-cap.release()
-cv2.destroyAllWindows()
-def respond(msg):
-    if "hello" in msg.lower():
-        return "Hi there!"
-    elif "bye" in msg.lower():
-        return "Goodbye!"
-    else:
-        return "I don't understand."
-
-while True:
-    user = input("You: ")
-    if user.lower() == "exit":
-        break
-    print("Bot:", respond(user))
-import sqlite3
-
-conn = sqlite3.connect("expenses.db")
-c = conn.cursor()
-c.execute("CREATE TABLE IF NOT EXISTS expenses (amount REAL, category TEXT, date TEXT)")
-
-def add_expense():
-    a = float(input("Amount: "))
-    cat = input("Category: ")
-    date = input("Date (YYYY-MM-DD): ")
-    c.execute("INSERT INTO expenses VALUES (?, ?, ?)", (a, cat, date))
-    conn.commit()
-
-def view():
-    for row in c.execute("SELECT * FROM expenses"):
-        print(row)
-
-while True:
-    ch = input("\n1.Add 2.View 3.Exit\nChoice: ")
-    if ch == "1": add_expense()
-    elif ch == "2": view()
-    else: break
-
-conn.close()
-import requests
-from bs4 import BeautifulSoup
-
-res = requests.get("https://www.bbc.com/news")
-soup = BeautifulSoup(res.text, 'html.parser')
-
-headlines = soup.find_all('h3')
-for h in headlines[:10]:
-    print(h.get_text(strip=True))
-import requests
-
-city = input("Enter city: ")
-api_key = "your_api_key_here"  # Get it from https://openweathermap.org/api
-url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
-
-response = requests.get(url).json()
-if response.get("main"):
-    print(f"Temperature: {response['main']['temp']}°C")
-    print(f"Weather: {response['weather'][0]['description']}")
-else:
-    print("City not found!")
-import requests
-
-city = input("Enter city: ")
-api_key = "your_api_key_here"  # Get it from https://openweathermap.org/api
-url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
-
-response = requests.get(url).json()
-if response.get("main"):
-    print(f"Temperature: {response['main']['temp']}°C")
-    print(f"Weather: {response['weather'][0]['description']}")
-else:
-    print("City not found!")
-
         
