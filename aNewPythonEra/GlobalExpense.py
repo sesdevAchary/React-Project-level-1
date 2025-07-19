@@ -368,3 +368,16 @@ if __name__ == "__main__":
     tracker = Track_Expense() # object creation
     tracker.main()
 #	Ensures the main program runs only when the script is executed directly
+
+
+
+
+
+
+import random
+import string
+
+length = int(input("Password length: "))
+characters = string.ascii_letters + string.digits + string.punctuation
+password = ''.join(random.choice(characters) for _ in range(length))
+print("Generated password:", password)
