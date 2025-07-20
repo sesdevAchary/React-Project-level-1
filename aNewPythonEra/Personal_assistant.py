@@ -19,3 +19,7 @@ def greeet_user():
 def show_quote():
     print("💡 Quote of the Day:")
     print(random.choice(quotes))
+    
+def show_dateNtime():
+    now = datetime.datetime.now()
+    print("📅 Current Date and Time:", now.strftime("%d-%m-%y:%H-%M-%S"))
