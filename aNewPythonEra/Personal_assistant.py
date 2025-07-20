@@ -32,3 +32,13 @@ def take_note():
         print("✅ Note saved successfully!")
     except Exception as e:
          print("⚠️ Error saving note:", e)
+
+def read_notes():
+    try:
+        with open("notes.txt","r") as file:
+            if content.strip():
+                print("📓 Your Notes:\n" + content)
+            else:
+                print("No notes yet")
+    except FileNotFoundError:
+        print("⚠️ No notes file found.")
