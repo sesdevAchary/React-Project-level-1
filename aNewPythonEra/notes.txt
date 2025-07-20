@@ -1,5 +1,8 @@
 1-> Pip is a package manager in python ( pip install module_name ) & .py is the extension 
 
+
+def __init__(self):
+        self.expense = [] - constructor function
 2-> ............python first.py
 
 3-> nameO=''.join(reversed(name)) {for string reversal}
@@ -20,5 +23,13 @@
 11-> remove(array,"word") will remove a word
 
 12-> import random (if want to pick random choice from array-->print(random.choice(quotes)))
+
+13->now = datetime.datetime.now()
+    print("📅 Current Date and Time:", now.strftime("%d-%m-%y:%H-%M-%S"))
+
+
+14->except Exception as e:
+Exception is the base class for most errors in Python (e.g., FileNotFoundError, IOError, etc.).
+as e assigns the actual error object to the variable e. Then we print the e ...
 
 

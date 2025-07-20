@@ -23,3 +23,12 @@ def show_quote():
 def show_dateNtime():
     now = datetime.datetime.now()
     print("📅 Current Date and Time:", now.strftime("%d-%m-%y:%H-%M-%S"))
+    
+def take_note():
+    try:
+        note = input("📝 Write your note: ")
+        with open("notes.txt" ,"a") as file:
+            file.write(note+"\n")
+        print("✅ Note saved successfully!")
+    except Exception as e:
+         print("⚠️ Error saving note:", e)
