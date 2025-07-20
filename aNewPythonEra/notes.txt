@@ -19,4 +19,6 @@
 
 11-> remove(array,"word") will remove a word
 
+12-> import random (if want to pick random choice from array-->print(random.choice(quotes)))
+
 

@@ -16,3 +16,6 @@ def greeet_user():
     name =print(input("👋 Hello! What's your name?"))
     print(f"Welcome ,{name} ! I am your personal assistant ")
     return name
+def show_quote():
+    print("💡 Quote of the Day:")
+    print(random.choice(quotes))
