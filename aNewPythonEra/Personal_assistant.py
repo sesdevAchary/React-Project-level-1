@@ -61,3 +61,11 @@ def show_date_time():
 def show_quote():
     print("💡 Quote of the Day:")  # Step 1: Print a header
     print(random.choice(quotes))   # Step 2: Print a random quote
+def take_note():
+    try:
+        note = input("📝 Write your note: ")
+        with open("notes.txt", "a") as file:
+            file.write(note + "\n")
+        print("✅ Note saved successfully!")
+    except Exception as e:
+        print("⚠️ Error saving note:", e)
