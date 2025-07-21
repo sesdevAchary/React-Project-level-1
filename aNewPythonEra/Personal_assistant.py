@@ -103,6 +103,9 @@ public class HelloWorld {
 public static int factorial(int n) {
     return (n <= 1) ? 1 : n * factorial(n - 1);
 }
+public static String reverse(String str) {
+    return new StringBuilder(str).reverse().toString();
+}
 
 
 
