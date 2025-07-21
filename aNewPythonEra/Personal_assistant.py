@@ -139,6 +139,9 @@ Scanner scanner = new Scanner(System.in);
 System.out.print("Enter your name: ");
 String name = scanner.nextLine();
 System.out.println("Hello, " + name);
+public static int largest(int a, int b, int c) {
+    return Math.max(a, Math.max(b, c));
+}
 
 
 
