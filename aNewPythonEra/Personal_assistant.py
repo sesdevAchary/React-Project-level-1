@@ -106,6 +106,13 @@ public static int factorial(int n) {
 public static String reverse(String str) {
     return new StringBuilder(str).reverse().toString();
 }
+public static boolean isPalindrome(String str) {
+    int i = 0, j = str.length() - 1;
+    while (i < j) {
+        if (str.charAt(i++) != str.charAt(j--)) return false;
+    }
+    return true;
+}
 
 
 
