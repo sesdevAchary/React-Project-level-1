@@ -95,6 +95,14 @@ public static boolean isPrime(int n) {
     }
     return true;
 }
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
+public static int factorial(int n) {
+    return (n <= 1) ? 1 : n * factorial(n - 1);
+}
 
 
 
