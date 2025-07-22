@@ -43,6 +43,14 @@ def read_notes():
                 print("No notes yet")
     except FileNotFoundError:
         print("⚠️ No notes file found.")
+
+def delete_saved_file():
+    try:
+        with open (" notes.txt","w") as file:
+            file.write(" ") # write none to a file
+        print( "🗑️ All notes have been deleted.")
+    except Exception as e:
+        print("⚠️ Error deleting notes:", e)
         
 def show_menu():
     print("\n📌 What would you like to do?")
@@ -50,7 +58,8 @@ def show_menu():
     print("2. View current date and time")
     print("3. Write a note")
     print("4. Read saved notes")
-    print("5. Exit")
+    print("5. Deleting the Saved file")
+    print("6. Exit")
     
 user = greet_user()
 print(f"Welcome ,{user} ! I am your personal assistant")
@@ -67,6 +76,8 @@ while True:
     elif choice == "4":
         read_notes()
     elif choice == "5":
+        delete_saved_file()
+    elif choice == "6":
         print(f"👋 Goodbye, {user}! Have a great day!")
         break
     else:
