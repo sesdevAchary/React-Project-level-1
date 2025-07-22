@@ -194,3 +194,11 @@ while True:
 
 
 
+def show_date_time():
+    now = datetime.datetime.now()
+    print("📅 Current Date and Time:", now.strftime("%Y-%m-%d %H:%M:%S"))
+def show_quote():
+    print("💡 Quote of the Day:")  # Step 1: Print a header
+    print(random.choice(quotes))   # Step 2: Print a random quote
+def take_note():
+    try:
