@@ -33,3 +33,4 @@ Exception is the base class for most errors in Python (e.g., FileNotFoundError, 
 as e assigns the actual error object to the variable e. Then we print the e ...
 
 
+aare you okay ?
