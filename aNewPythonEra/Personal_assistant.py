@@ -13,7 +13,7 @@ quotes=[
 
 
 def greet_user():
-    name =print(input("👋 Hello! What's your name?"))
+    name =input("👋 Hello! What's your name?")
     print(f"Welcome ,{name} ! I am your personal assistant ")
     return name
 def show_quote():
@@ -36,6 +36,7 @@ def take_note():
 def read_notes():
     try:
         with open("notes.txt","r") as file:
+            content = file.read()
             if content.strip():
                 print("📓 Your Notes:\n" + content)
             else:
