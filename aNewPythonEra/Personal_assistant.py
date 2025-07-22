@@ -2,6 +2,7 @@
 
 import random   #Used to randomly pick a motivational quote.
 import datetime 
+import os
 
 quotes=[
     "Keep going, you're doing great!",
@@ -45,6 +46,7 @@ def read_notes():
         print("⚠️ No notes file found.")
 
 def delete_saved_file():
+import os
     try:
         if os.path.exists("notes.txt"):
            os.remove("notes.txt")
