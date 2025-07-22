@@ -46,9 +46,11 @@ def read_notes():
 
 def delete_saved_file():
     try:
-        with open (" notes.txt","w") as file:
-            file.write(" ") # write none to a file
-        print( "🗑️ All notes have been deleted.")
+        if os.path.exists("notes.txt"):
+           os.remove("notes.txt")
+           print("🗑️ Notes file deleted successfully.")
+        else:
+            print("⚠️ No notes file to delete.")
     except Exception as e:
         print("⚠️ Error deleting notes:", e)
         
