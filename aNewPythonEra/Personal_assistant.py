@@ -43,7 +43,16 @@ def read_notes():
     except FileNotFoundError:
         print("⚠️ No notes file found.")
         
-        
+def show_menu():
+    print("\n📌 What would you like to do?")
+    print("1. Get a motivational quote")
+    print("2. View current date and time")
+    print("3. Write a note")
+    print("4. Read saved notes")
+    print("5. Exit")
+    
+    
+
         
         
         
