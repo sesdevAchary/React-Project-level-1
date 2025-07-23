@@ -225,3 +225,11 @@ public static int gcd(int a, int b) {
     }
     return a;
 }
+public static int reverseInt(int num) {
+    int rev = 0;
+    while (num != 0) {
+        rev = rev * 10 + num % 10;
+        num /= 10;
+    }
+    return rev;
+}
