@@ -215,3 +215,13 @@ def show_quote():
     print(random.choice(quotes))   # Step 2: Print a random quote
 def take_note():
     try:
+        
+        
+public static int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
