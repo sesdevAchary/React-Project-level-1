@@ -251,4 +251,11 @@ public static boolean isSorted(int[] arr) {
         if (arr[i] > arr[i + 1]) return false;
     }
     return true;
+}public static Map<Character, Integer> countChars(String str) {
+    Map<Character, Integer> map = new HashMap<>();
+    for (char c : str.toCharArray()) {
+        map.put(c, map.getOrDefault(c, 0) + 1);
+    }
+    return map;
 }
+
