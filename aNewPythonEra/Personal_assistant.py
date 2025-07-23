@@ -289,5 +289,14 @@ public static int max(int a, int b, int c) {
 public static boolean isEven(int num) {
     return num % 2 == 0;
 }
+public static void printFibonacci(int n) {
+    int a = 0, b = 1;
+    for (int i = 0; i < n; i++) {
+        System.out.print(a + " ");
+        int temp = a + b;
+        a = b;
+        b = temp;
+    }
+}
 
 
