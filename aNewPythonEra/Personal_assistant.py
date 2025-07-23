@@ -286,5 +286,8 @@ public static void calculator(char operator, double a, double b) {
 public static int max(int a, int b, int c) {
     return Math.max(a, Math.max(b, c));
 }
+public static boolean isEven(int num) {
+    return num % 2 == 0;
+}
 
 
