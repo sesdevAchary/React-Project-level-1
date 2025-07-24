@@ -2,7 +2,10 @@
 
 import random   #Used to randomly pick a motivational quote.
 import datetime 
+import json
 import os
+NOTES_FILE = "notes.json"  # Global file name
+
 
 quotes=[
     "Keep going, you're doing great!",
@@ -63,6 +66,28 @@ def calaculator():
         print(" 🧾 The result is:-> "+result)
     except:
         print("❌ Invalid expression.")
+        
+def search_notes():
+    keyword=input(" Enter the word you want to search ").lower()
+    notes=load_notes()
+    found = false
+    for note in notes:
+        if keyword in notes['txt'].lower():
+            print(f"✅ Found: {note['text']} (🕒 {note['timestamp']})")
+            found =True
+    if not found:
+        print("❌ No matching notes found.")
+        
+def save_notes(notes):
+    with open(NOTES_FILE, "w") as f:
+        json.dump(notes, f, indent=4) 
+    
+def load_notes():
+    if not os.path.exists([NOTES_FILE]):
+        return []
+    with open (NOTES_FILE,"r") as f:
+        return json.load(f)
+
         
 def show_menu():
     print("\n📌 What would you like to do?")
