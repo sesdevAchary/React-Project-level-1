@@ -181,3 +181,6 @@ int a = 5, b = 10;
 a = a + b;
 b = a - b;
 a = a - b;
+public static boolean isPalindrome(String str) {
+    return str.equals(new StringBuilder(str).reverse().toString());
+}
