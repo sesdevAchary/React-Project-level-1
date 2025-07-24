@@ -167,3 +167,6 @@ public static boolean isSorted(int[] arr) {
     }
     return true;
 }
+public static String reverse(String str) {
+    return new StringBuilder(str).reverse().toString();
+}
