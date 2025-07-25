@@ -171,6 +171,17 @@ public static int gcd(int a, int b) {public static Map<Character, Integer> count
     }
     return map;
 }
+public static void bubbleSort(int[] arr) {
+    for (int i = 0; i < arr.length - 1; i++) {
+        for (int j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
 
     while (b != 0) {
         int temp = b;
