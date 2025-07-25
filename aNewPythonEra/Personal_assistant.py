@@ -151,7 +151,20 @@ public static void printFibonacci(int n) {
 }
 public static boolean isPalindrome(String str) {
     return str.equals(new StringBuilder(str).reverse().toString());
+}class Person {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void greet() {
+        System.out.println("Hi, I'm " + name + ", age " + age);
+    }
 }
+
 public static String reverse(String str) {
     return new StringBuilder(str).reverse().toString();
 }
