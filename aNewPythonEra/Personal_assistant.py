@@ -63,7 +63,7 @@ def calaculator():
     try:
         expr=input(" 🧮 Enter a basic math expression (e.g.-> 5*8-9+2)")
         result = eval(expr)
-        print(" 🧾 The result is:-> "+result)
+        print(" 🧾 The result is:-> "+str(result)) #ast.literal_eval() (for basic arithmetic only)
     except:
         print("❌ Invalid expression.")
         
@@ -123,82 +123,10 @@ while True:
     else:
         print("❌ Invalid choice. Try again.")
 
-
+if __name__=="main":
+    main()
 
         
     
     
     
-    
-    
-    
-    public static int gcd(int a, int b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-public static int reverseInt(int num) {
-    int rev = 0;
-    while (num != 0) {
-        rev = rev * 10 + num % 10;
-        num /= 10;
-    }
-    return rev;
-}
-class Person {
-    String name;
-    int age;
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public void greet() {
-        System.out.println("Hi, I'm " + name + ", age " + age);
-    }
-}
-public static boolean isSorted(int[] arr) {
-    for (int i = 0; i < arr.length - 1; i++) {
-        if (arr[i] > arr[i + 1]) return false;
-    }
-    return true;
-}
-public static String reverse(String str) {
-    return new StringBuilder(str).reverse().toString();
-}
-public static boolean isPrime(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i <= Math.sqrt(n); i++) {
-        if (n % i == 0) return false;
-    }
-    return true;
-}
-int a = 5, b = 10;
-a = a + b;
-b = a - b;
-a = a - b;
-public static boolean isPalindrome(String str) {
-    return str.equals(new StringBuilder(str).reverse().toString());
-}
-public static void printFibonacci(int n) {
-    int a = 0, b = 1;
-    for (int i = 0; i < n; i++) {
-        System.out.print(a + " ");
-        int temp = a + b;
-        a = b;
-        b = temp;
-    }
-}
-public static void calculator(char operator, double a, double b) {
-    switch (operator) {
-        case '+': System.out.println(a + b); break;
-        case '-': System.out.println(a - b); break;
-        case '*': System.out.println(a * b); break;
-        case '/': System.out.println(b != 0 ? a / b : "Divide by zero!"); break;
-        default: System.out.println("Invalid operator");
-    }
-}
