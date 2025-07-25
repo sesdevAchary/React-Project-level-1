@@ -164,6 +164,14 @@ public static boolean isPalindrome(String str) {
         System.out.println("Hi, I'm " + name + ", age " + age);
     }
 }
+public static int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
 
 public static String reverse(String str) {
     return new StringBuilder(str).reverse().toString();
