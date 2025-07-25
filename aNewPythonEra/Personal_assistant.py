@@ -164,7 +164,14 @@ public static boolean isPalindrome(String str) {
         System.out.println("Hi, I'm " + name + ", age " + age);
     }
 }
-public static int gcd(int a, int b) {
+public static int gcd(int a, int b) {public static Map<Character, Integer> countChars(String str) {
+    Map<Character, Integer> map = new HashMap<>();
+    for (char c : str.toCharArray()) {
+        map.put(c, map.getOrDefault(c, 0) + 1);
+    }
+    return map;
+}
+
     while (b != 0) {
         int temp = b;
         b = a % b;
