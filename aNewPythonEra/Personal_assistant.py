@@ -182,6 +182,15 @@ public static void bubbleSort(int[] arr) {
         }
     }
 }
+public static void calculator(char operator, double a, double b) {
+    switch (operator) {
+        case '+': System.out.println(a + b); break;
+        case '-': System.out.println(a - b); break;
+        case '*': System.out.println(a * b); break;
+        case '/': System.out.println(b != 0 ? a / b : "Divide by zero!"); break;
+        default: System.out.println("Invalid operator");
+    }
+}
 
     while (b != 0) {
         int temp = b;
