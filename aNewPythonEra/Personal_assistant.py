@@ -155,3 +155,8 @@ public static boolean isPalindrome(String str) {
 public static String reverse(String str) {
     return new StringBuilder(str).reverse().toString();
 }
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
