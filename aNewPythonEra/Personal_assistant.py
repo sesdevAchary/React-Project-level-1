@@ -149,3 +149,9 @@ public static void printFibonacci(int n) {
         b = temp;
     }
 }
+public static boolean isPalindrome(String str) {
+    return str.equals(new StringBuilder(str).reverse().toString());
+}
+public static String reverse(String str) {
+    return new StringBuilder(str).reverse().toString();
+}
