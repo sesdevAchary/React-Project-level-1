@@ -191,6 +191,12 @@ public static void calculator(char operator, double a, double b) {
         default: System.out.println("Invalid operator");
     }
 }
+public static int linearSearch(int[] arr, int target) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
 
     while (b != 0) {
         int temp = b;
