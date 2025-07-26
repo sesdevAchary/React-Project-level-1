@@ -86,4 +86,10 @@ public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, world!");
     }
+}public static int gcd(int a, int b) {public static Map<Character, Integer> countChars(String str) {
+    Map<Character, Integer> map = new HashMap<>();
+    for (char c : str.toCharArray()) {
+        map.put(c, map.getOrDefault(c, 0) + 1);
+    }
+    return map;
 }
