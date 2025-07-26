@@ -79,3 +79,11 @@ public static int linearSearch(int[] arr, int target) {
     }
     return -1;
 }
+public static String reverse(String str) {
+    return new StringBuilder(str).reverse().toString();
+}
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
