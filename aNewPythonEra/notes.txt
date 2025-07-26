@@ -1,0 +1,2 @@
+ password= ''.join(random.choice(characters) for _ in range(length))
+    # storing=mke one string-pick 1 rndm char(loop through len times)

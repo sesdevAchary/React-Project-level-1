@@ -18,6 +18,20 @@ def generate_password(length, use_Letter=True,use_digits=True,use_symbols=True):
         characters=characters+string.punctuation
     if not characters:
         return "❌ Please select at least one character type."
-    password= ''.join(random.choice(characters) for _ in range(length))
-    # for in range the range times
+    password= ''.join(random.choice(characters) for _ in range(length)) # or secret.choices
+    # storing=mke one string-pick 1 rndm char(loop through len times)
+    return password
+
+
+
+#🎛 USER INTERACTION FUNCTION   #
+
+def get_user_pref():
+#Collects preferences from user via input(), handles errors, and prints/copies the password.
+    try:
+        length=int(input("🔢 Enter desired length of the password"))
+        
+
+
+
     
