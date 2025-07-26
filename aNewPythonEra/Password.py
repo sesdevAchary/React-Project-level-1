@@ -18,4 +18,6 @@ def generate_password(length, use_Letter=True,use_digits=True,use_symbols=True):
         characters=characters+string.punctuation
     if not characters:
         return "❌ Please select at least one character type."
+    password= ''.join(random.choice(characters) for _ in range(length))
+    # for in range the range times
     
