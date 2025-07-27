@@ -94,3 +94,12 @@ def is_balanced(s):
     return not stack
 
 print(is_balanced("{[()]}"))  # True
+import requests
+from bs4 import BeautifulSoup
+
+def get_titles(url):
+    res = requests.get(url)
+    soup = BeautifulSoup(res.text, 'html.parser')
+    return [title.text for title in soup.find_all('h2')]
+
+# print(get_titles("https://example-blog.com"))
