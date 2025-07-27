@@ -103,3 +103,12 @@ def get_titles(url):
     return [title.text for title in soup.find_all('h2')]
 
 # print(get_titles("https://example-blog.com"))
+def caesar_cipher(text, shift):
+    def shift_char(c):
+        if c.isalpha():
+            base = ord('a') if c.islower() else ord('A')
+            return chr((ord(c) - base + shift) % 26 + base)
+        return c
+    return ''.join(shift_char(c) for c in text)
+
+print(caesar_cipher("Hello World!", 3))  # "Khoor Zruog!"
