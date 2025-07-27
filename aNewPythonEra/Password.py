@@ -31,10 +31,12 @@ def generate_password(length, use_Letter=True,use_digits=True,use_symbols=True):
 def get_user_pref():
 #Collects preferences from user via input(), handles errors, and prints/copies the password.
     try:
-        length=int(input("🔢 Enter desired length of the password"))
-        use_Letter=int(" Do you want to Input Letters ? (y/n)-> ").lower() =='y'
-        use_digits=int(" Do you want to Input Digits ? (y/n)-> ").lower() =='y'
-        use_symbols=int(" Do you want to Input symbols ? (y/n)-> ").lower() =='y'
+        
+        length = int(input("🔢 Enter password length (e.g. 12): ").strip())
+
+        use_Letter=(" Do you want to Input Letters ? (y/n)-> ").lower() =='y'
+        use_digits=(" Do you want to Input Digits ? (y/n)-> ").lower() =='y'
+        use_symbols=(" Do you want to Input symbols ? (y/n)-> ").lower() =='y'
         #Converts the user’s input to lower then compares Yes or No if yes then True otherwise false
         
         password= generate_password(length, use_Letter=True,use_digits=True,use_symbols=True)
