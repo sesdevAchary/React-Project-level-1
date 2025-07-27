@@ -112,3 +112,13 @@ def caesar_cipher(text, shift):
     return ''.join(shift_char(c) for c in text)
 
 print(caesar_cipher("Hello World!", 3))  # "Khoor Zruog!"
+def flatten(lst):
+    result = []
+    for i in lst:
+        if isinstance(i, list):
+            result.extend(flatten(i))
+        else:
+            result.append(i)
+    return result
+
+print(flatten([1, [2, [3, 4], 5], 6]))  # [1, 2, 3, 4, 5, 6]
