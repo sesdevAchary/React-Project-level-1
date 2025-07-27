@@ -40,6 +40,18 @@ def get_user_pref():
         password= generate_password(length, use_Letter=True,use_digits=True,use_symbols=True)
         print("\n🔐 Generated Password:", password)
         
+        
+        copy = input(" Do you want to copy the password to your clipboard ?(y/n)->").lower()
+        if copy == 'y':
+            pyperclip.copy(password)
+            print("📋 Password copied to clipboard!")
+    except ValueError:
+        print("❌ Invalid input. Please enter numbers only for length.")
+        
+if __name__== "__main__":
+    get_user_pref()
+    
+        
 
 
 
