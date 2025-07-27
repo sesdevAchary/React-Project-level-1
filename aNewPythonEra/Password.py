@@ -8,7 +8,9 @@ import pyperclip
 def generate_password(length, use_Letter=True,use_digits=True,use_symbols=True):
 #include letters (A-Z, a-z),(0-9),!@#$%^&*()
 #If arguments not passed when calling the function, it assumes you want to include that type of character.
-    characters=''#Initializes an empty string to collect valid characters.acc to user
+
+    characters=' ' #Initializes an empty string to collect valid characters.acc to user
+    
     if use_Letter:
         characters=characters+string.ascii_letters
     #if true then add a-z,A-Z to the empty char
@@ -30,6 +32,13 @@ def get_user_pref():
 #Collects preferences from user via input(), handles errors, and prints/copies the password.
     try:
         length=int(input("🔢 Enter desired length of the password"))
+        use_Letter=int(" Do you want to Input Letters ? (y/n)-> ").lower() =='y'
+        use_digits=int(" Do you want to Input Digits ? (y/n)-> ").lower() =='y'
+        use_symbols=int(" Do you want to Input symbols ? (y/n)-> ").lower() =='y'
+        #Converts the user’s input to lower then compares Yes or No if yes then True otherwise false
+        
+        password= generate_password(length, use_Letter=True,use_digits=True,use_symbols=True)
+        print("\n🔐 Generated Password:", password)
         
 
 
@@ -40,56 +49,3 @@ def get_user_pref():
     
     
     
-    
-    public static int gcd(int a, int b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}public static int gcd(int a, int b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-public static void calculator(char operator, double a, double b) {
-    switch (operator) {
-        case '+': System.out.println(a + b); break;
-        case '-': System.out.println(a - b); break;
-        case '*': System.out.println(a * b); break;
-        case '/': System.out.println(b != 0 ? a / b : "Divide by zero!"); break;
-        default: System.out.println("Invalid operator");
-    }
-}
-public static int linearSearch(int[] arr, int target) {
-    for (int i = 0; i < arr.length; i++) {
-        if (arr[i] == target) return i;
-    }
-    return -1;
-}
-public static String reverse(String str) {
-    return new StringBuilder(str).reverse().toString();
-}
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, world!");
-    }
-}public static int gcd(int a, int b) {public static Map<Character, Integer> countChars(String str) {
-    Map<Character, Integer> map = new HashMap<>();
-    for (char c : str.toCharArray()) {
-        map.put(c, map.getOrDefault(c, 0) + 1);
-    }
-    return map;
-}
