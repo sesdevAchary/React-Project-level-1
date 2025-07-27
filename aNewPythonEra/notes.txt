@@ -1,2 +1,9 @@
  password= ''.join(random.choice(characters) for _ in range(length))
     # storing=mke one string-pick 1 rndm char(loop through len times)
+
+    2->  What is CLI?
+CLI stands for Command-Line Interface. It means your program will run in the terminal using text input/output (like your Password.py script).
+
+No buttons or windows.
+
+You type commands and see output as text.
