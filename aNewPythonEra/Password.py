@@ -45,8 +45,12 @@ def get_user_pref():
         
         copy = input(" Do you want to copy the password to your clipboard ?(y/n)->").lower()
         if copy == 'y':
-            pyperclip.copy(password)
-            print("📋 Password copied to clipboard!")
+            try:
+                pyperclip.copy(password)
+                print("📋 Password copied to clipboard!")
+            except pyperclip.PyperclipException:
+                print("⚠️ Clipboard not supported in this environment. Please copy manually.")   
+            
     except ValueError:
         print("❌ Invalid input. Please enter numbers only for length.")
         
