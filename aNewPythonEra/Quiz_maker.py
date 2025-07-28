@@ -71,3 +71,16 @@ function Toggle() {
   const [isOn, setIsOn] = useState(false);
   return <button onClick={() => setIsOn(!isOn)}>{isOn ? "ON" : "OFF"}</button>;
 }
+import { useEffect, useState } from "react";
+
+function DataFetcher() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then(res => res.json())
+      .then(setData);
+  }, []);
+
+  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+}
