@@ -137,3 +137,22 @@ function TodoList() {
     </>
   );
 }
+import { useEffect, useState } from "react";
+
+function DebouncedInput() {
+  const [input, setInput] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setSearchTerm(input), 500);
+    return () => clearTimeout(timeout);
+  }, [input]);
+
+  return (
+    <div>
+      <input value={input} onChange={e => setInput(e.target.value)} />
+      <p>Searching for: {searchTerm}</p>
+    </div>
+  );
+}
+``
