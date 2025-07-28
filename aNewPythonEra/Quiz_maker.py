@@ -21,7 +21,7 @@ class user:
         self.password=password
         self.is_admin=is_admin  #is_admin helps separate regular users from admins.
         
-    def to_dict(self):  #Converts the User object to a dictionary for easy storage (e.g., in a JSON file).
+    def to_dict(self):  #Converts the User object to a dictionary for easy storage (in a JSON file).
         return{
             "username":self.username,
             "password":self.password,
@@ -30,10 +30,19 @@ class user:
             
         }
         
-    @staticmethod   #Can be called without creating a User objec
+    @staticmethod   #Can be called without creating a User object
     def from_dict(data):  #Takes a dictionary (data) and turns it into a User object.
         return user(data['username'],data['password'],data['is_admin'])
     #Creates and returns a new User instance using data from the dictionary.
+    
+    
+    class question:
+        def __init__(self,prompt,options,answer,q_types="mcq"):  #cons method for question takes qText(prompt) etc attributes   
+            self.id= str(uiduuid4()) #Generates a unique ID for each question using uuid4() and converts it to a string.
+            self.prompt=prompt
+            self.options=options
+            self.answer=answer
+            self.q_types=q_types
     
 
 
