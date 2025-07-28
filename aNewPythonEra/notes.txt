@@ -7,3 +7,14 @@ CLI stands for Command-Line Interface. It means your program will run in the ter
 No buttons or windows.
 
 You type commands and see output as text.
+
+
+
+
+
+
+
+1->importing the models
+2-> creating the models
+    creating user class,inititating the constructor then convert the user object to dictionary then
+     using the static returns data from json
