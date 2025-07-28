@@ -95,3 +95,12 @@ function SimpleForm() {
     </form>
   );
 }
+function DarkModeToggle() {
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    document.body.style.background = dark ? "#333" : "#fff";
+  }, [dark]);
+
+  return <button onClick={() => setDark(!dark)}>Toggle Dark Mode</button>;
+}
