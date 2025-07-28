@@ -115,3 +115,8 @@ function Modal({ isOpen, onClose, children }) {
     </div>
   );
 }
+function useToggle(initial = false) {
+  const [state, setState] = useState(initial);
+  const toggle = () => setState(prev => !prev);
+  return [state, toggle];
+}
