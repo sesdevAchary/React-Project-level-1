@@ -67,3 +67,7 @@ function Counter() {
     </div>
   );
 }
+function Toggle() {
+  const [isOn, setIsOn] = useState(false);
+  return <button onClick={() => setIsOn(!isOn)}>{isOn ? "ON" : "OFF"}</button>;
+}
