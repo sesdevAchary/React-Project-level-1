@@ -84,3 +84,14 @@ function DataFetcher() {
 
   return <pre>{JSON.stringify(data, null, 2)}</pre>;
 }
+function SimpleForm() {
+  const [email, setEmail] = useState("");
+  const isValid = email.includes("@");
+
+  return (
+    <form>
+      <input value={email} onChange={e => setEmail(e.target.value)} />
+      {!isValid && <p>Email is invalid</p>}
+    </form>
+  );
+}
