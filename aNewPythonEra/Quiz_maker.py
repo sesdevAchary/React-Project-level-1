@@ -155,4 +155,14 @@ function DebouncedInput() {
     </div>
   );
 }
-``
+`function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <nav>
+      <button onClick={() => setOpen(!open)}>Menu</button>
+      {open && <ul><li>Home</li><li>About</li><li>Contact</li></ul>}
+    </nav>
+  );
+}
+`
