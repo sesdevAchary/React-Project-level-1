@@ -103,6 +103,9 @@ def load_quizzes():
         return []
     with open('QUIZ_FILE','r') as f:
         return[Quiz.from_dict(q) for q in json.load(f)]
+def save_quizzes(quizzes):
+     with open(QUIZ_FILE, 'w') as f:
+        json.dump([q.to_dict() for q in quizzes], f, indent=4)
     
 
 
