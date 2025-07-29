@@ -93,6 +93,12 @@ def load_users():
     with open(USER_FILE,'r') as f:
         return [user.from_dict(u) for u in json.load(f)] # refer the notes
 
+def save_users(users):
+    with open(USER_FILE,'w') as f:
+        json.dump([u.to_dict() for u in users],f, indent=4)
+        #json.dump() writes the list of dictionaries to the file.
+    
+
 
 
 
