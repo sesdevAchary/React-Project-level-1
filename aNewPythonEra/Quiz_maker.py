@@ -15,6 +15,7 @@ import os   #Used to check if a file exists (os.path.exists()).
 import uuid  #Used to generate unique IDs for each question (uuid.uuid4()).
 
 
+# ========== MODELS ==========#
 class user:
     def __init__(self , username,password,is_admin=false): #constructor method#
         self.username=username

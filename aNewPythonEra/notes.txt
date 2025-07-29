@@ -9,6 +9,10 @@ No buttons or windows.
 You type commands and see output as text.
 
 
+.....................................................................................
+
+
+MODELS-->
 without mpdel-user = {"username": "mahi", "password": "123", "is_admin": False}. No rules, no methods, no clear structure.
 with model-user = User("mahi", "123", False)
 Defines what kind of data your app will use (users, questions, quizzes).
@@ -29,7 +33,17 @@ json.dump() works only with dictionaries and lists, not objects.
 to_dict() makes the object storable and transferrable.
 }
 
-from_dict()	Converts dictionary → object (for loading)
+from_dict()	Converts dictionary → object (for loading)...
+Takes a dictionary like:
+{
+    "prompt": "What is 2+2?",
+    "options": ["2", "3", "4"],
+    "answer": "4",
+    "q_type": "mcq"
+}Returns a new Question object->q = Question("What is 2+2?", ["2", "3", "4"], "4", "mcq")
+
+models Feature	
+✅ Structure	Defines what kind of data your app will use (users, questions, quizzes).
 
 
 
@@ -41,8 +55,12 @@ from_dict()	Converts dictionary → object (for loading)
 
 
 
-
+............................................................................................................
 1->importing the models
 2-> creating the models
     creating user class,inititating the constructor then convert the user object to dictionary then
      using the static returns data from json
+    Creating the question and quiz and converting the object into dictionary file to_dict and from_dict
+     ✅ to_dict(self) — Converts an object into a dictionary
+     ✅ from_dict(data) — Converts a dictionary back into an object
+    
