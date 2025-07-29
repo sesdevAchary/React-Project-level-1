@@ -82,7 +82,7 @@ class user:
         
 # ========== FILE OPERATIONS ==========#
 
-USER_FILE='users.json'
+USER_FILE='users.json'  #✅ Capital letters are a naming convention for constants in Python.(e.g.-PI = 3.14)
 QUIZ_FILE='quizes.json'
 # plain text files formatted in JSON.filenames for storing users and quizzes
 
@@ -90,6 +90,8 @@ QUIZ_FILE='quizes.json'
 def load_users():
     if not os.path.exists(USER_FILE):
      return[]
+    with open(USER_FILE,'r') as f:
+        return [user.from_dict(u) for u in json.load(f)] # refer the notes
 
 
 

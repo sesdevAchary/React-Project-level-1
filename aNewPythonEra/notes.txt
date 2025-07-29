@@ -46,6 +46,25 @@ models Feature
 ✅ Structure	Defines what kind of data your app will use (users, questions, quizzes).
 
 
+FILE STRUCTURE...
+
+with open(USER_FILE, 'r') as f:
+    return [user.from_dict(u) for u in json.load(f)] ->
+->open the user.json in read mode 
+   a temporary name (f) that we can use to refer to the file while it's open.
+->json.load(f)->
+   This reads the entire content of file f and converts it from JSON to Python.
+->for u in json.load(f)->
+   This is a list comprehension.
+   u represents each user dictionary inside the loaded list
+->user.from_dict(u)->
+  calls the from_dict() method from your User class to create:
+  User("john", "123", False)
+->Wraps the loop in square brackets to build a list of User objects.
+📌 Final Meaning (Plain English):
+"Open the file 'users.json' in read mode as f.
+ Read all its content as JSON, convert each user dictionary into a User object using from_dict(), and
+  return the list of all those User objects."
 
 
 
