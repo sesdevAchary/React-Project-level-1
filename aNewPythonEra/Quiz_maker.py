@@ -113,6 +113,17 @@ def save_quizzes(quizzes):
   const scroll = () => window.scrollTo({ top: 0, behavior: "smooth" });
   return <button onClick={scroll}>Scroll to Top</button>;
 }
+function Countdown({ seconds }) {
+  const [time, setTime] = useState(seconds);
+
+  useEffect(() => {
+    if (time <= 0) return;
+    const timer = setTimeout(() => setTime(time - 1), 1000);
+    return () => clearTimeout(timer);
+  }, [time]);
+
+  return <p>{time > 0 ? time : "Time's up!"}</p>;
+}
 
     
 
