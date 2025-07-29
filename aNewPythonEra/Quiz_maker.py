@@ -36,13 +36,27 @@ class user:
     #Creates and returns a new User instance using data from the dictionary.
     
     
-    class question:
-        def __init__(self,prompt,options,answer,q_types="mcq"):  #cons method for question takes qText(prompt) etc attributes   
+    class Question:
+        def __init__(self,prompt,options,answer,q_types="mcq"):  #Constructor method for Question.   
             self.id= str(uiduuid4()) #Generates a unique ID for each question using uuid4() and converts it to a string.
-            self.prompt=prompt
+            self.prompt=prompt  # (question text), "What is 2+2?",
             self.options=options
             self.answer=answer
             self.q_types=q_types
+            
+        def to_dict(self): #Converts the Question object to a dictionary.
+         return {    #Returns a dictionary containing all question data.
+            "id":self.id,
+            "prompt":self.prompt,
+            "options":self.options,
+            "answer":self.answer,
+            "q_type":self.q_types
+            
+            
+          }
+         @staticmethod
+         def from_dict(data):     #Recreates a Question from saved data (used in load_quizzes()).
+           return Question(data['prompt'],data['options'],data['answer'],data['q_type'])
     
 
 
@@ -54,115 +68,3 @@ class user:
 
 
 
-
-
-import { useState } from "react";
-
-function Counter() {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </div>
-  );
-}
-function Toggle() {
-  const [isOn, setIsOn] = useState(false);
-  return <button onClick={() => setIsOn(!isOn)}>{isOn ? "ON" : "OFF"}</button>;
-}
-import { useEffect, useState } from "react";
-
-function DataFetcher() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/1")
-      .then(res => res.json())
-      .then(setData);
-  }, []);
-
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
-}
-function SimpleForm() {
-  const [email, setEmail] = useState("");
-  const isValid = email.includes("@");
-
-  return (
-    <form>
-      <input value={email} onChange={e => setEmail(e.target.value)} />
-      {!isValid && <p>Email is invalid</p>}
-    </form>
-  );
-}
-function DarkModeToggle() {
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    document.body.style.background = dark ? "#333" : "#fff";
-  }, [dark]);
-
-  return <button onClick={() => setDark(!dark)}>Toggle Dark Mode</button>;
-}
-function Modal({ isOpen, onClose, children }) {
-  if (!isOpen) return null;
-  return (
-    <div className="modal-backdrop">
-      <div className="modal-content">
-        {children}
-        <button onClick={onClose}>Close</button>
-      </div>
-    </div>
-  );
-}
-function useToggle(initial = false) {
-  const [state, setState] = useState(initial);
-  const toggle = () => setState(prev => !prev);
-  return [state, toggle];
-}
-function TodoList() {
-  const [tasks, setTasks] = useState([]);
-  const [input, setInput] = useState("");
-
-  const addTask = () => {
-    setTasks([...tasks, input]);
-    setInput("");
-  };
-
-  return (
-    <>
-      <input value={input} onChange={e => setInput(e.target.value)} />
-      <button onClick={addTask}>Add</button>
-      <ul>{tasks.map((t, i) => <li key={i}>{t}</li>)}</ul>
-    </>
-  );
-}
-import { useEffect, useState } from "react";
-
-function DebouncedInput() {
-  const [input, setInput] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setSearchTerm(input), 500);
-    return () => clearTimeout(timeout);
-  }, [input]);
-
-  return (
-    <div>
-      <input value={input} onChange={e => setInput(e.target.value)} />
-      <p>Searching for: {searchTerm}</p>
-    </div>
-  );
-}
-`function Navbar() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <nav>
-      <button onClick={() => setOpen(!open)}>Menu</button>
-      {open && <ul><li>Home</li><li>About</li><li>Contact</li></ul>}
-    </nav>
-  );
-}
-`

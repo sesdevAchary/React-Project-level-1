@@ -9,6 +9,34 @@ No buttons or windows.
 You type commands and see output as text.
 
 
+without mpdel-user = {"username": "mahi", "password": "123", "is_admin": False}. No rules, no methods, no clear structure.
+with model-user = User("mahi", "123", False)
+Defines what kind of data your app will use (users, questions, quizzes).
+Makes sure every quiz has valid structure (e.g., a title and list of questions).
+Has .to_dict() and .from_dict() methods so objects can be saved (e.g. to JSON).
+
+
+to_dict()	Converts object → dictionary (for saving)
+   q = Question("What is 2+2?", ["2", "3", "4"], "4")->Converts it into a plain dictionary like this:
+{
+    "id": "c37b...uuid...",
+    "prompt": "What is 2+2?",
+    "options": ["2", "3", "4"],
+    "answer": "4",
+    "q_type": "mcq"
+You can’t directly save class objects like Question into JSON or text files.
+json.dump() works only with dictionaries and lists, not objects.
+to_dict() makes the object storable and transferrable.
+}
+
+from_dict()	Converts dictionary → object (for loading)
+
+
+
+
+
+
+
 
 
 
