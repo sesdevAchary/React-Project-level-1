@@ -59,10 +59,24 @@ class user:
            return Question(data['prompt'],data['options'],data['answer'],data['q_type'])
          
     class Quiz:
-      def __init__(self,title,question,created_by):
-        self.title=title
-        self.question=question
-        self.created_by=created_by
+        def __init__(self,title,question,created_by):
+          #Assigns inputs to object attributes.
+          self.title=title
+          self.question=question
+          self.created_by=created_by
+         
+        def to_dict(self):
+            return{
+                "title":self.title,
+                "question":[q.to_dict() for q in self.question], #convert each q to self dictionary
+                "created_by":self.created_by
+            }
+        @staticmethod
+        def from_dict(data):
+            quesitons = [Question.from_dict(q) for q in data['quesitons']]
+            return Quiz(data['title'],questions,data['created_by'])
+     
+      
         
         
 
