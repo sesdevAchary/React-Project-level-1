@@ -97,6 +97,12 @@ def save_users(users):
     with open(USER_FILE,'w') as f:
         json.dump([u.to_dict() for u in users],f, indent=4)
         #json.dump() writes the list of dictionaries to the file.
+        
+def load_quizzes():
+    if not os.path.exists(QUIZ_FILE):
+        return []
+    with open('QUIZ_FILE','r') as f:
+        return[Quiz.from_dict(q) for q in json.load(f)]
     
 
 
