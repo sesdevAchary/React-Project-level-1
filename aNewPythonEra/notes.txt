@@ -63,4 +63,10 @@ models Feature
     Creating the question and quiz and converting the object into dictionary file to_dict and from_dict
      ✅ to_dict(self) — Converts an object into a dictionary
      ✅ from_dict(data) — Converts a dictionary back into an object
-    
+
+
+3-> creating the FILE OP method  [data is actually saved to and loaded from the disk using JSON files]
+    models.py classes (User, Quiz) provide:
+     .to_dict()→convert objects to dictionaries(stored JSON)..from_dict() →convert dictionaries back into objects (usable in Python).
+    This file operation code uses those methods to:
+     Save Python objects (User, Quiz) into files.Load them back from files as Python objects.

@@ -80,8 +80,16 @@ class user:
       
         
         
+# ========== FILE OPERATIONS ==========#
+
+USER_FILE='users.json'
+QUIZ_FILE='quizes.json'
+# plain text files formatted in JSON.filenames for storing users and quizzes
 
 
+def load_users():
+    if not os.path.exists(USER_FILE):
+     return[]
 
 
 
