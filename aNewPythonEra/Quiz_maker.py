@@ -106,6 +106,14 @@ def load_quizzes():
 def save_quizzes(quizzes):
      with open(QUIZ_FILE, 'w') as f:
         json.dump([q.to_dict() for q in quizzes], f, indent=4)
+        
+        
+        
+        function ScrollToTop() {
+  const scroll = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  return <button onClick={scroll}>Scroll to Top</button>;
+}
+
     
 
 
