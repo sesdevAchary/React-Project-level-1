@@ -57,7 +57,14 @@ class user:
          @staticmethod
          def from_dict(data):     #Recreates a Question from saved data (used in load_quizzes()).
            return Question(data['prompt'],data['options'],data['answer'],data['q_type'])
-    
+         
+    class Quiz:
+      def __init__(self,title,question,created_by):
+        self.title=title
+        self.question=question
+        self.created_by=created_by
+        
+        
 
 
 
