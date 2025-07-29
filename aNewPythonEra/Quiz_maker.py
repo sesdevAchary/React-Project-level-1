@@ -124,6 +124,23 @@ function Countdown({ seconds }) {
 
   return <p>{time > 0 ? time : "Time's up!"}</p>;
 }
+function Draggable() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const onDrag = e => {
+    setPosition({ x: e.clientX, y: e.clientY });
+  };
+
+  return (
+    <div
+      draggable
+      onDrag={onDrag}
+      style={{ position: "absolute", left: position.x, top: position.y }}
+    >
+      Drag Me!
+    </div>
+  );
+}
 
     
 
