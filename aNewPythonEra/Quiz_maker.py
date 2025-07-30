@@ -97,57 +97,14 @@ def save_users(users):
     with open(USER_FILE,'w') as f:
         json.dump([u.to_dict() for u in users],f, indent=4)
         #json.dump() writes the list of dictionaries to the file.
-        
+
 def load_quizzes():
-    if not os.path.exists(QUIZ_FILE):
-        return []
-    with open('QUIZ_FILE','r') as f:
-        return[Quiz.from_dict(q) for q in json.load(f)]
-def save_quizzes(quizzes):
-     with open(QUIZ_FILE, 'w') as f:
-        json.dump([q.to_dict() for q in quizzes], f, indent=4)
-        
-        
-        
-        function ScrollToTop() {
-  const scroll = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  return <button onClick={scroll}>Scroll to Top</button>;
-}
-function Countdown({ seconds }) {
-  const [time, setTime] = useState(seconds);
-
-  useEffect(() => {
-    if (time <= 0) return;
-    const timer = setTimeout(() => setTime(time - 1), 1000);
-    return () => clearTimeout(timer);
-  }, [time]);
-
-  return <p>{time > 0 ? time : "Time's up!"}</p>;
-}
-function Draggable() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const onDrag = e => {
-    setPosition({ x: e.clientX, y: e.clientY });
-  };
-
-  return (
-    <div
-      draggable
-      onDrag={onDrag}
-      style={{ position: "absolute", left: position.x, top: position.y }}
-    >
-      Drag Me!
-    </div>
-  );
-}
-
-    
+  if not os.path.exists(QUIZ_FILE):
+    return[]
+  with open(QUIZ_FILE,'r') as f:   #Now f refers to the open file object (like a file handle).
+    return [QUIZ.from_dict(q) for q in json.load(f)]
+  # “Open the file quizzes.json in read mode, convert its JSON content into Python dictionaries,
+  # then transform each dictionary into a Quiz object, and return the list of all these objects.”
 
 
-
-
-
-
-
-
+  
